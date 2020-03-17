@@ -1,0 +1,133 @@
+<p-dataTable [value]="feeds" selectionMode="single" [(selection)]="selectedFeed"
+             (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">
+  <header>Gestion des articles</header>
+
+  <p-column field="type" header="Type" [sortable]="true"></p-column>
+  <p-column field="title" header="Titre" [sortable]="true"></p-column>
+  <p-column field="author" header="Auteur" [sortable]="true" [filter]="true" filterMatchMode="contains"></p-column>
+  <p-column field="creationDate" header="Date de création" [sortable]="true"></p-column>
+  <p-column field="top" header="Top" [sortable]="true"></p-column>
+  <p-column field="id" header="Id" [sortable]="true"></p-column>
+
+  <footer>
+    <div class="ui-helper-clearfix" style="width:100%">
+      <button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()"
+              label="Ajouter"></button>
+    </div>
+  </footer>
+</p-dataTable>
+
+
+<p-dialog header="Propriétés de l'article" [responsive]="false" [(visible)]="displayDialog" showEffect="fade"
+          [modal]="true" [width]="800">
+  <form [formGroup]="feedForm" (ngSubmit)="onSubmit()">
+    <div class="ui-grid ui-grid-responsive ui-fluid">
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="type">Type*</label></div>
+        <div class="ui-grid-col-6" id="type">
+          <p-dropdown [options]="types" formControlName="type" [style]="{'width':'150px'}"
+                      [required]="true"></p-dropdown>
+        </div>
+        <div class="ui-grid-col-4">
+          <div class="ui-message ui-messages-error ui-corner-all"
+               *ngIf="!feedForm.controls['type'].valid && feedForm.controls['type'].dirty">
+            <i class="fa fa-close"></i>
+            Le type est obligatoire.
+          </div>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="top">Top*</label></div>
+        <div class="ui-grid-col-6" id="top">
+          <p-radioButton name="grouptop" value="1" label="oui" formControlName="top"></p-radioButton>
+          <p-radioButton name="grouptop" value="0" label="non" formControlName="top"></p-radioButton>
+        </div>
+      </div>
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="title">Titre*</label></div>
+        <div class="ui-grid-col-6"><input type="text" pInputText name="title" id="title"
+                                          formControlName="title"/></div>
+        <div class="ui-grid-col-4">
+          <div class="ui-message ui-messages-error ui-corner-all"
+               *ngIf="!feedForm.controls['title'].valid && feedForm.controls['title'].dirty">
+            <i class="fa fa-close"></i>
+            Le titre est obligatoire.
+          </div>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="content">Contenu</label></div>
+        <div class="ui-grid-col-10" id="content">
+          <p-editor formControlName="content" [style]="{'height':'150px'}"></p-editor>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="author">Auteur</label></div>
+        <div class="ui-grid-col-6"><input type="text" pInputText name="author" id="author"
+                                          formControlName="author"/></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="creationDate">Date de création*</label></div>
+        <div class="ui-grid-col-6" id="creationDate">
+          <p-calendar formControlName="creationDate" [monthNavigator]="true" [yearNavigator]="true"
+                      yearRange="1900:2030" [locale]="fr" [inline]="false" [showIcon]="true" dateFormat="dd/mm/yy"
+                      readonlyInput="true" ></p-calendar>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="feedFile">Photo</label></div>
+        <div class="ui-grid-col-6">
+          <input type="file" (change)="fileChange($event)" placeholder="Upload file"
+                 accept=".jpg" name="feedFile" id="feedFile" formControlName="feedFile">
+        </div>
+        <div class="ui-grid-col-4">
+          <div class="ui-message ui-messages-error ui-corner-all"
+               *ngIf="!feedForm.controls['feedFile'].valid && feedForm.controls['feedFile'].dirty">
+            <i class="fa fa-close"></i>
+            Ajoutez une photo
+          </div>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="photoEnabled">Activer la photo</label></div>
+        <div class="ui-grid-col-6" id="photoEnabled">
+          <p-inputSwitch formControlName="photoEnabled"></p-inputSwitch>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="imageWidth">Largeur de la photo*</label></div>
+        <div class="ui-grid-col-8" id="imageWidth">
+          <p-dropdown [options]="photoWidths" formControlName="imageWidth" [style]="{'width':'150px'}"
+                      [required]="true"></p-dropdown>
+          <div class="ui-grid-col-2">
+            <div class="ui-message ui-messages-error ui-corner-all"
+                 *ngIf="!feedForm.controls['imageWidth'].valid && feedForm.controls['imageWidth'].dirty">
+              <i class="fa fa-close"></i>
+              La largeur de la photo est obligatoire.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="imagePosition">Position de la photo*</label></div>
+        <div class="ui-grid-col-6" id="imagePosition">
+          <p-radioButton name="groupposition" value="left" label="gauche"
+                         formControlName="imagePosition"></p-radioButton>
+          <p-radioButton name="groupposition" value="right" label="droite"
+                         formControlName="imagePosition"></p-radioButton>
+        </div>
+      </div>
+
+    </div>
+    <footer>
+      <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <button type="submit" [disabled]="!feedForm.valid" pButton icon="fa-check"
+                label="Enregistrer"></button>
+        <button type="button" [disabled]="newFeed" pButton icon="fa-close" (click)="delete()"
+                label="Supprimer"></button>
+      </div>
+    </footer>
+  </form>
+</p-dialog>

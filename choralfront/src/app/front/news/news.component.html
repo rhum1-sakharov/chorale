@@ -1,0 +1,23 @@
+
+<div id="carousel-generic" class="carousel slide" data-ride="carousel">
+
+  <div class="carousel-inner" role="listbox">
+    <div *ngFor="let feed of feeds" class="item" [ngClass]="{active: isActive(feed)}">
+      <img src="api/files/get/feeds/jpg/{{feed.id}}"  >
+      <div class="carousel-caption">
+        <h3>{{feed.title}}</h3>
+        <p [innerHTML]="feed.content | sanitizeHTML"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

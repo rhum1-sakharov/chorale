@@ -1,0 +1,43 @@
+<p-growl [value]="msgs" ></p-growl>
+<form [formGroup]="userform" (ngSubmit)="onLogin(userform.value)">
+  <p-panel header="Authentification">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Identifiant *
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="username" placeholder="identifiant..."/>
+        </div>
+        <div class="ui-grid-col-4">
+          <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['username'].valid&&userform.controls['username'].dirty">
+            <i class="fa fa-close"></i>
+           Identifiant obligatoire
+          </div>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Mot de passe *
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="password" formControlName="password" placeholder="mot de passe... - minimum 4 caractères"/>
+        </div>
+        <div class="ui-grid-col-4">
+          <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['password'].valid&&userform.controls['password'].dirty">
+            <i class="fa fa-close"></i>
+            <span *ngIf="userform.controls['password'].errors['required']">Mot de passe obligatoire</span>
+            <span *ngIf="userform.controls['password'].errors['minlength']">4 caractères minimum</span>
+          </div>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-6">
+          <button pButton type="submit" label="Se connecter" [disabled]="!userform.valid" icon="fa-key"></button>
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+    </div>
+  </p-panel>
+</form>

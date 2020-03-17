@@ -1,0 +1,15 @@
+
+<p-dataTable [value]="songs" selectionMode="single"
+             [paginator]="true" rows="15" [responsive]="true">
+  <header>Partitions</header>
+
+  <p-column field="title" header="Titre" [filter]="true" filterMatchMode="contains" [sortable]="true"></p-column>
+  <p-column field="compositor" [filter]="true" filterMatchMode="contains" header="Compositeur" [sortable]="true"></p-column>
+
+  <p-column field="id" header="Partition">
+    <template let-col let-song="rowData" pTemplate="body">
+            <span><a href="api/songs/getfile/{{song.extension}}/{{song[col.field]}}" target="_blank">
+              <i class="fa fa-music fa-2x" aria-hidden="true"></i></a></span>
+    </template>
+  </p-column>
+</p-dataTable>

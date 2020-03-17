@@ -1,0 +1,84 @@
+<script src="admin.songs.component.ts"></script>
+<p-dataTable [value]="songs" selectionMode="single" [(selection)]="selectedSong"
+             (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">
+  <header>Gestion des Chansons</header>
+
+  <p-column field="title" header="Titre" [filter]="true" [sortable]="true"></p-column>
+  <p-column field="compositor" [filter]="true" header="Compositeur" [sortable]="true"></p-column>
+  <p-column field="releaseDate" header="Titre" [filter]="true" [sortable]="true"></p-column>
+  <p-column field="id" header="Partition">
+    <template let-col let-song="rowData" pTemplate="body">
+            <span><a href="rest/songs/getfile/nwc/{{song[col.field]}}"><i class="fa fa-download"
+                                                                          aria-hidden="true"></i></a>
+</span>
+    </template>
+  </p-column>
+
+  <footer>
+    <div class="ui-helper-clearfix" style="width:100%">
+      <button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()"
+              label="Ajouter"></button>
+    </div>
+  </footer>
+</p-dataTable>
+
+<p-dialog header="Propriétés de la Chanson" [responsive]="false" [(visible)]="displayDialog" showEffect="fade"
+          [modal]="true" [width]="600">
+  <form [formGroup]="songForm" (ngSubmit)="onSubmit()">
+    <div class="ui-grid ui-grid-responsive ui-fluid">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="title">Titre*</label></div>
+        <div class="ui-grid-col-6"><input type="text" pInputText name="title" id="title"
+                                          formControlName="title"/></div>
+        <div class="ui-grid-col-4">
+          <div class="ui-message ui-messages-error ui-corner-all"
+               *ngIf="!songForm.controls['title'].valid && songForm.controls['title'].dirty">
+            <i class="fa fa-close"></i>
+            Le titre est obligatoire.
+          </div>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="compositor">Compositeur*</label></div>
+        <div class="ui-grid-col-6"><input type="text" pInputText name="compositor" id="compositor"
+                                          formControlName="compositor"/></div>
+        <div class="ui-grid-col-4">
+          <div class="ui-message ui-messages-error ui-corner-all"
+               *ngIf="!songForm.controls['compositor'].valid && songForm.controls['compositor'].dirty">
+            <i class="fa fa-close"></i>
+            Renseignez le prénom et le nom du compositeur.
+          </div>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="releaseDate">Date de sortie*</label></div>
+        <div class="ui-grid-col-6" id="releaseDate">
+          <p-calendar formControlName="releaseDate" [monthNavigator]="true" [yearNavigator]="true"
+                      yearRange="1900:2030" [locale]="fr" [inline]="true" dateFormat="dd/mm/yy"
+                      readonlyInput="true"></p-calendar>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"><label for="nwcFile">Fichier</label></div>
+        <div class="ui-grid-col-6">
+          <input type="file" (change)="fileChange($event)" placeholder="Upload file"
+                 accept=".pdf,.doc,.docx,.nwc,.jpg,.mp3,.mid" name="nwcFile" id="nwcFile" formControlName="nwcFile">
+        </div>
+        <div class="ui-grid-col-4">
+          <div class="ui-message ui-messages-error ui-corner-all"
+               *ngIf="!songForm.controls['nwcFile'].valid && songForm.controls['nwcFile'].dirty">
+            <i class="fa fa-close"></i>
+            Ajoutez un fichier.
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <button type="submit" [disabled]="!songForm.valid" pButton icon="fa-check" label="Enregistrer"></button>
+        <button type="button" [disabled]="newSong" pButton icon="fa-close" (click)="delete()"
+                label="Supprimer"></button>
+      </div>
+    </footer>
+  </form>
+</p-dialog>

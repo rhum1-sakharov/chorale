@@ -1,0 +1,175 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+  padding-top: 70px;
+}
+
+h1.white{
+  color:white;
+}
+
+.panel-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background-color: #f5f5f5;
+  font-size: 10px;
+}
+
+.panel-title {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: inherit;
+  font-weight:bold;
+}
+
+/*
+CHORALE GOURMANDE
+*/
+
+.cg-featurette img.width-128{
+  .cg-img-width(128px);
+}
+
+.cg-featurette img.width-64{
+  .cg-img-width(64px);
+}
+
+.cg-featurette img.width-256{
+  .cg-img-width(256px);
+}
+
+.cg-featurette img.width-192{
+  .cg-img-width(192px);
+}
+
+.cg-featurette img.width-512{
+  .cg-img-width(512px);
+}
+
+.cg-featurette img.width-800{
+  .cg-img-width(800px);
+}
+
+.cg-featurette img.width-1024{
+  .cg-img-width(1024px);
+}
+
+.cg-featurette img.width-2048{
+  .cg-img-width(2048px);
+}
+
+.border-radius(@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.cg-img-width(@width: 128px){
+  width: @width;
+}
+
+
+.cg-featurette {
+  .border-radius(5px);
+  background-color: white;
+  color: #263238;
+  margin: 10px 10px 5px 5px ;
+  min-height:100px;
+  width:100%;
+  padding:10px;
+  opacity: 0.92;
+}
+
+.cg-featurette table{
+  width:100%;
+}
+
+.cg-featurette table th{
+  text-align: left;
+}
+
+.cg-featurette img.right{
+  float: right;
+  margin: 5px 5px 10px 10px;
+
+}
+
+.cg-featurette img.left{
+  float: left;
+  margin: 10px 10px 5px 5px ;
+}
+
+.cg-footer-right{
+  float:right;
+  font-size: 10px;
+}
+
+/*----------------------CAROUSEL--------------*/
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 70%;
+  margin: auto;
+}
+
+.carousel-inner img {
+  //width: auto;
+  //height: 225px;
+  //max-height: 225px;
+}
+
+/*----------------------FOOTER--------------*/
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.cg-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.cg-main {
+
+  flex: 1;
+}
+
+.cg-footer {
+  background: #333;
+  color: #777;
+}
+
+
+.cg-footer nav,
+.cg-footer .nbvisitors{
+  float: right;
+  text-align: right;
+}
+
+.cg-footer .creator {
+  font-size: 12px;
+  text-decoration: none;
+  margin-left:2px;
+  margin-top:40px;
+}
+
+
+.cg-footer nav ul li a {
+  font-size: 14px;
+  margin-top: 5px;
+  color: white;
+  text-decoration: none;
+  color: #777;
+  background-color: transparent;
+}
+
+.cg-footer nav ul li a:hover,
+.cg-footer nav ul li a:focus{
+  background-color: transparent;
+}
