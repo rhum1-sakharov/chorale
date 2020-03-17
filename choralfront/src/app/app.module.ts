@@ -54,6 +54,7 @@ import {VisitorsService} from "./services/visitors/visitors.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +75,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     InputTextModule,
