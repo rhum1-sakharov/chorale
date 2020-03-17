@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {SongsService} from "../../services/songs/songs.service";
 import {Song} from "../../services/songs/song";
-import {SelectItem} from "primeng/components/common/api";
+import {SelectItem} from "primeng";
+
 
 @Component({
   selector: 'app-admin-misc',

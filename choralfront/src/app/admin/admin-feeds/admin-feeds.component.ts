@@ -4,7 +4,8 @@ import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, FormControl, Validators} from "@angular/forms";
 import {FeedsService} from "../../services/feeds/feeds.service";
 import { PHOTO_WIDTHS, FRENCH_CALENDAR} from "../../constants";
-import {SelectItem} from "primeng/components/common/api";
+import {SelectItem} from "primeng";
+
 
 
 @Component({

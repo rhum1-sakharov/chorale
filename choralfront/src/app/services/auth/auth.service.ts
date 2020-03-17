@@ -4,25 +4,26 @@ import {catchError, map} from 'rxjs/operators';
 import {Injectable, OnInit} from '@angular/core';
 
 import {Credentials} from "./credentials";
-import {JwtHelper, tokenNotExpired} from 'angular2-jwt';
+
 
 
 import {AUTH} from "../../constants";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
+import {JwtHelperService} from "@auth0/angular-jwt";
 
 @Injectable()
 export class AuthService implements OnInit {
 
-  jwtService: JwtHelper;
+  jwtService: JwtHelperService;
 
-  constructor(private http: HttpClient, private jwtHelper: JwtHelper, private router: Router) {
+  constructor(private http: HttpClient, private jwtHelper: JwtHelperService, private router: Router) {
     this.jwtService = jwtHelper;
   }
 
   ngOnInit(): void {
 
-    this.jwtHelper = new JwtHelper();
+    this.jwtHelper = new JwtHelperService();
   }
 
   login(credentials: Credentials): Observable<boolean> {
@@ -44,7 +45,7 @@ export class AuthService implements OnInit {
 
   checkUserAccess(role: string) {
     let userHasAccess: boolean = false;
-    if (tokenNotExpired(AUTH.token)) {
+    if (this.jwtHelper.isTokenExpired(AUTH.token)) {
       let token: any = this.jwtService.decodeToken(localStorage.getItem(AUTH.token));
       //iterate over roles of user
       token.sub.authorities.map(res => {

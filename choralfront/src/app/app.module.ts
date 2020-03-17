@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {LOCALE_ID, NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {JwtHelper} from 'angular2-jwt';
 /**
  * PrimeNG COMPONENT
  * */
@@ -9,14 +8,11 @@ import {
   ButtonModule,
   CalendarModule,
   CarouselModule,
-  DataGridModule,
-  DataTableModule,
   DialogModule,
   DropdownModule,
   EditorModule,
   FileUploadModule,
   GalleriaModule,
-  GrowlModule,
   InputSwitchModule,
   InputTextModule,
   LightboxModule,
@@ -24,9 +20,9 @@ import {
   PanelModule,
   RadioButtonModule,
   SelectButtonModule,
-  SharedModule,
+  SharedModule, TableModule,
   TabViewModule
-} from 'primeng/primeng';
+} from 'primeng';
 /**
  * Custom components
  * */
@@ -51,6 +47,9 @@ import {LoginComponent} from "./login/login.component";
 import {DiversComponent} from "./admin/divers/divers.component";
 import {DiversService} from "./services/divers/divers.service";
 import {VisitorsService} from "./services/visitors/visitors.service";
+import {JwtHelperService} from "@auth0/angular-jwt";
+import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -70,15 +69,18 @@ import {VisitorsService} from "./services/visitors/visitors.service";
     PageNotFoundComponent,
     LoginComponent,
     DiversComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     InputTextModule,
-    DataTableModule,
     ButtonModule,
     SharedModule,
+    TableModule,
     TabViewModule,
     LightboxModule,
     DialogModule,
@@ -87,7 +89,6 @@ import {VisitorsService} from "./services/visitors/visitors.service";
     FileUploadModule,
     RadioButtonModule,
     DropdownModule,
-    DataGridModule,
     GalleriaModule,
     CarouselModule,
     PanelModule,
@@ -95,9 +96,9 @@ import {VisitorsService} from "./services/visitors/visitors.service";
     SelectButtonModule,
     ListboxModule,
     InputSwitchModule,
-    GrowlModule
+
   ],
-  providers: [DiversService,VisitorsService, FeedsService, SongsService, AuthGuardService,AuthService,JwtHelper, {provide: LOCALE_ID, useValue: "fr-FR"}],
+  providers: [DiversService,VisitorsService, FeedsService, SongsService, AuthGuardService,AuthService,JwtHelperService, {provide: LOCALE_ID, useValue: "fr-FR"}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

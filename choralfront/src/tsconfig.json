@@ -17,9 +17,13 @@
     ]
   },
   "files": [
-    "main.ts"
+    "main.ts",
+    "polyfills.ts"
   ],
   "include": [
     "src/**/*.d.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "enableIvy": true
+  }
 }

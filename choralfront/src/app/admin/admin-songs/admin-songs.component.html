@@ -1,29 +1,32 @@
 <script src="admin.songs.component.ts"></script>
-<p-dataTable [value]="songs" selectionMode="single" [(selection)]="selectedSong"
-             (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">
-  <header>Gestion des Chansons</header>
 
-  <p-column field="title" header="Titre" [filter]="true" [sortable]="true"></p-column>
-  <p-column field="compositor" [filter]="true" header="Compositeur" [sortable]="true"></p-column>
-  <p-column field="releaseDate" header="Titre" [filter]="true" [sortable]="true"></p-column>
-  <p-column field="id" header="Partition">
-    <template let-col let-song="rowData" pTemplate="body">
-            <span><a href="rest/songs/getfile/nwc/{{song[col.field]}}"><i class="fa fa-download"
-                                                                          aria-hidden="true"></i></a>
-</span>
-    </template>
-  </p-column>
+<p-table></p-table>
 
-  <footer>
-    <div class="ui-helper-clearfix" style="width:100%">
-      <button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()"
-              label="Ajouter"></button>
-    </div>
-  </footer>
-</p-dataTable>
+<!--<p-dataTable [value]="songs" selectionMode="single" [(selection)]="selectedSong"-->
+             <!--(onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">-->
+  <!--<header>Gestion des Chansons</header>-->
+
+  <!--<p-column field="title" header="Titre" [filter]="true" [sortable]="true"></p-column>-->
+  <!--<p-column field="compositor" [filter]="true" header="Compositeur" [sortable]="true"></p-column>-->
+  <!--<p-column field="releaseDate" header="Titre" [filter]="true" [sortable]="true"></p-column>-->
+  <!--<p-column field="id" header="Partition">-->
+    <!--<template let-col let-song="rowData" pTemplate="body">-->
+            <!--<span><a href="rest/songs/getfile/nwc/{{song[col.field]}}"><i class="fa fa-download"-->
+                                                                          <!--aria-hidden="true"></i></a>-->
+<!--</span>-->
+    <!--</template>-->
+  <!--</p-column>-->
+
+  <!--<footer>-->
+    <!--<div class="ui-helper-clearfix" style="width:100%">-->
+      <!--<button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()"-->
+              <!--label="Ajouter"></button>-->
+    <!--</div>-->
+  <!--</footer>-->
+<!--</p-dataTable>-->
 
 <p-dialog header="Propriétés de la Chanson" [responsive]="false" [(visible)]="displayDialog" showEffect="fade"
-          [modal]="true" [width]="600">
+          [modal]="true" [style]="{'width':'600px'}">
   <form [formGroup]="songForm" (ngSubmit)="onSubmit()">
     <div class="ui-grid ui-grid-responsive ui-fluid">
       <div class="ui-grid-row">
@@ -54,7 +57,7 @@
         <div class="ui-grid-col-2"><label for="releaseDate">Date de sortie*</label></div>
         <div class="ui-grid-col-6" id="releaseDate">
           <p-calendar formControlName="releaseDate" [monthNavigator]="true" [yearNavigator]="true"
-                      yearRange="1900:2030" [locale]="fr" [inline]="true" dateFormat="dd/mm/yy"
+                      yearRange="1900:2030" [locale]="fr" dateFormat="dd/mm/yy"
                       readonlyInput="true"></p-calendar>
         </div>
       </div>

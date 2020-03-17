@@ -6,7 +6,7 @@ import {Message} from 'primeng/primeng';
 import {NavigationExtras, Router, ActivatedRoute, Params} from "@angular/router";
 import {AUTH} from "../constants";
 import 'rxjs/add/operator/switchMap';
-import {tokenNotExpired, JwtHelper} from 'angular2-jwt';
+import {JwtHelperService} from "@auth0/angular-jwt";
 
 @Component({
   selector: 'app-login',
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   userform: FormGroup;
   msgs: Message[];
 
-  constructor(private jwtHelper: JwtHelper, private route: ActivatedRoute, private auth: AuthService, private builder: FormBuilder, private router: Router) {
+  constructor(private jwtHelper: JwtHelperService, private route: ActivatedRoute, private auth: AuthService, private builder: FormBuilder, private router: Router) {
     this.userform = builder.group({
       'username': new FormControl('', [Validators.required]),
       'password': new FormControl('', [Validators.required, Validators.minLength(4)])

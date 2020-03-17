@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormBuilder, FormControl, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {DiversService} from "../../services/divers/divers.service";
-import {SelectItem} from "primeng/components/common/api";
+
 import {NG_THEMES} from "../../constants";
+import {SelectItem} from "primeng";
 
 @Component({
   selector: 'app-divers',
