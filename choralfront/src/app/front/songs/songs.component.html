@@ -11,7 +11,8 @@
 
   <ng-template pTemplate="colgroup">
     <colgroup style="width:70%"></colgroup>
-    <colgroup style="width:30%"></colgroup>
+    <colgroup style="width:20%"></colgroup>
+    <colgroup style="width:10%"></colgroup>
   </ng-template>
 
   <ng-template pTemplate="header">
@@ -19,6 +20,7 @@
 
       <th>Titres</th>
       <th >Compositeurs</th>
+      <th>Extensions</th>
 
     </tr>
   </ng-template>
@@ -29,6 +31,10 @@
       <td>
         <i class="fa fa-music  margin-right-15" aria-hidden="true"></i>{{rowData.title | uppercase}}</td>
       <td><cite>{{rowData.compositor | uppercase}}</cite></td>
+
+      <td>
+        {{rowData.extension}}
+      </td>
 
     </tr>
   </ng-template>
