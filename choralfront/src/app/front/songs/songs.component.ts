@@ -25,6 +25,12 @@ export class SongsComponent implements OnInit {
   title: string;
   routeData: any;
 
+  cols:any[]=[
+    {field:'title',header:'Titres'},
+    {field:'compositor',header:'Compositeurs'},
+    {field:'extension',header:'Extensions'}
+    ];
+
   constructor(private router: Router, private route: ActivatedRoute, private songsService: SongsService) {
   }
 

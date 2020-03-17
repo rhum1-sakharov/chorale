@@ -1,8 +1,10 @@
 <p-table [value]="songs"
+         [columns]="cols"
          selectionMode="single"
          [(selection)]="selectedSong"
          (onRowSelect)="getSong($event)"
          dataKey="id"
+         #dt
 >
 
   <ng-template pTemplate="caption">
@@ -22,6 +24,19 @@
       <th >Compositeurs</th>
       <th>Extensions</th>
 
+    </tr>
+
+    <tr>
+      <th>
+        <input style="width:100%;" placeholder="rechercher un titre..." pInputText type="text" (input)="dt.filter($event.target.value, 'title', 'contains')">
+      </th>
+      <th>
+        <input style="width:100%;" placeholder="rechercher un compositeur..." pInputText type="text" (input)="dt.filter($event.target.value, 'compositor', 'contains')">
+      </th>
+
+      <th>
+
+      </th>
     </tr>
   </ng-template>
 
