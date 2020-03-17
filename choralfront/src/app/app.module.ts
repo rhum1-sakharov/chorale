@@ -8,6 +8,7 @@ import {
   ButtonModule,
   CalendarModule,
   CarouselModule,
+  DataViewModule,
   DialogModule,
   DropdownModule,
   EditorModule,
@@ -20,7 +21,8 @@ import {
   PanelModule,
   RadioButtonModule,
   SelectButtonModule,
-  SharedModule, TableModule,
+  SharedModule,
+  TableModule,
   TabViewModule
 } from 'primeng';
 /**
@@ -50,6 +52,10 @@ import {VisitorsService} from "./services/visitors/visitors.service";
 import {JwtHelperService} from "@auth0/angular-jwt";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {registerLocaleData} from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr, 'fr');
 
 
 @NgModule({
@@ -72,10 +78,12 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
+
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+
     HttpClientModule,
     InputTextModule,
     ButtonModule,
@@ -96,6 +104,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     SelectButtonModule,
     ListboxModule,
     InputSwitchModule,
+    DataViewModule
+
+  ],
+  exports:[
 
   ],
   providers: [DiversService,VisitorsService, FeedsService, SongsService, AuthGuardService,AuthService,JwtHelperService, {provide: LOCALE_ID, useValue: "fr-FR"}],

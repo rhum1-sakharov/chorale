@@ -7,7 +7,9 @@ import {Song} from "./song";
 
 
 import {AUTH} from "../../constants";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
+
+export const URL_GET_SONG=`api/songs/getfile/`;
 
 @Injectable()
 export class SongsService {
@@ -76,4 +78,13 @@ export class SongsService {
     return Promise.reject(error.message || error);
   }
 
+  getSong(song: Song) {
+
+    return this.http.get(URL_GET_SONG+`${song.extension}/${song.id}`,{
+      responseType:'blob'
+    });
+
+
+
+  }
 }

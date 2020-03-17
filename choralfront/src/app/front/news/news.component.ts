@@ -17,7 +17,7 @@ import {FeedsService} from "../../services/feeds/feeds.service";
 })
 export class NewsComponent implements OnInit {
 
-  @HostBinding('@routeAnimation') routeAnimation = true;
+
   @HostBinding('style.display')   display = 'block';
 
   title: string;

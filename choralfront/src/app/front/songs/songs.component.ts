@@ -2,6 +2,7 @@ import {Component, OnInit, HostBinding} from "@angular/core";
 import {Router, ActivatedRoute, Route} from "@angular/router";
 import {SongsService} from "../../services/songs/songs.service";
 import {Song} from "../../services/songs/song";
+import { saveAs } from 'file-saver';
 // import {slideInDownAnimation} from "../../animations";
 import any = jasmine.any;
 
@@ -15,10 +16,12 @@ import any = jasmine.any;
 })
 export class SongsComponent implements OnInit {
 
-  @HostBinding('@routeAnimation') routeAnimation = true;
+
   @HostBinding('style.display') display = 'block';
+
   songs: Song[];
 
+  selectedSong:Song;
   title: string;
   routeData: any;
 
@@ -38,4 +41,10 @@ export class SongsComponent implements OnInit {
     window.location.href = 'api/songs/getfile/' + song.extension + '/' + song.id;
   }
 
+  getSong($event: any) {
+    this.songsService.getSong(this.selectedSong).subscribe(response=>{
+      var blob = new Blob([response], {type:`application/${this.selectedSong.extension}`});
+      saveAs(blob, `${this.selectedSong.title}.${this.selectedSong.extension}`);
+    });
+  }
 }

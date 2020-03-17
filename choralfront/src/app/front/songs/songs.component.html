@@ -1,15 +1,37 @@
+<p-table [value]="songs"
+         selectionMode="single"
+         [(selection)]="selectedSong"
+         (onRowSelect)="getSong($event)"
+         dataKey="id"
+>
 
-<!--<p-dataTable [value]="songs" selectionMode="single"-->
-             <!--[paginator]="true" rows="15" [responsive]="true">-->
-  <!--<header>Partitions</header>-->
+  <ng-template pTemplate="caption">
+    PARTITIONS
+  </ng-template>
 
-  <!--<p-column field="title" header="Titre" [filter]="true" filterMatchMode="contains" [sortable]="true"></p-column>-->
-  <!--<p-column field="compositor" [filter]="true" filterMatchMode="contains" header="Compositeur" [sortable]="true"></p-column>-->
+  <ng-template pTemplate="colgroup">
+    <colgroup style="width:70%"></colgroup>
+    <colgroup style="width:30%"></colgroup>
+  </ng-template>
 
-  <!--<p-column field="id" header="Partition">-->
-    <!--<template let-col let-song="rowData" pTemplate="body">-->
-            <!--<span><a href="api/songs/getfile/{{song.extension}}/{{song[col.field]}}" target="_blank">-->
-              <!--<i class="fa fa-music fa-2x" aria-hidden="true"></i></a></span>-->
-    <!--</template>-->
-  <!--</p-column>-->
-<!--</p-dataTable>-->
+  <ng-template pTemplate="header">
+    <tr>
+
+      <th>Titre</th>
+      <th >Compositeur</th>
+
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-rowData>
+    <tr [pSelectableRow]="rowData">
+
+      <td>
+        <i class="fa fa-music  margin-right-5" aria-hidden="true"></i>{{rowData.title}}</td>
+      <td>{{rowData.compositor}}</td>
+
+    </tr>
+  </ng-template>
+
+</p-table>
+

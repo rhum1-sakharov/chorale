@@ -13,7 +13,7 @@ selector: 'app-history',
 })
 export class HistoryComponent implements OnInit {
 
-  @HostBinding('@routeAnimation') routeAnimation = true;
+
   @HostBinding('style.display')   display = 'block';
 
   title: string;

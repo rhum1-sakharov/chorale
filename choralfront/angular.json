@@ -24,11 +24,12 @@
             "styles": [
               "node_modules/quill/dist/quill.core.css",
               "node_modules/quill/dist/quill.snow.css",
-              "node_modules/primeng/resources/themes/delta/theme.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/bootstrap/dist/css/bootstrap-theme.css",
+
               "src/styles.less"
             ],
             "scripts": [
@@ -66,7 +67,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "choralegourmande-front2:build"
+            "browserTarget": "choralegourmande-front2:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -97,7 +99,8 @@
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/bootstrap/dist/css/bootstrap-theme.css",
+              "node_modules/bootstrap/dist/css/bootstrap-grid.css",
+              "node_modules/bootstrap/dist/css/bootstrap-reboot.css",
               "src/styles.less"
             ],
             "assets": [

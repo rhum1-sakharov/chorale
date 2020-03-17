@@ -9,6 +9,7 @@ import {TrombiComponent} from "./front/trombi/trombi.component";
 import {AdminComponent} from "./admin/admin.component";
 import {AuthGuardService} from "./services/auth/auth-guard.service";
 import {LoginComponent} from "./login/login.component";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 const appRoutes: Routes = [
   {
@@ -56,6 +57,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
+
     RouterModule.forRoot(
       appRoutes,
       {useHash: true}
