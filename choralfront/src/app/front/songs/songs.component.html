@@ -17,8 +17,8 @@
   <ng-template pTemplate="header">
     <tr>
 
-      <th>Titre</th>
-      <th >Compositeur</th>
+      <th>Titres</th>
+      <th >Compositeurs</th>
 
     </tr>
   </ng-template>
@@ -27,8 +27,8 @@
     <tr [pSelectableRow]="rowData">
 
       <td>
-        <i class="fa fa-music  margin-right-5" aria-hidden="true"></i>{{rowData.title}}</td>
-      <td>{{rowData.compositor}}</td>
+        <i class="fa fa-music  margin-right-15" aria-hidden="true"></i>{{rowData.title | uppercase}}</td>
+      <td><cite>{{rowData.compositor | uppercase}}</cite></td>
 
     </tr>
   </ng-template>
