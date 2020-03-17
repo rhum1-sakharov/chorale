@@ -13,13 +13,13 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "^6.1.10",
-    "@angular/compiler": "^6.1.10",
-    "@angular/core": "^6.1.10",
-    "@angular/forms": "^6.1.10",
-    "@angular/platform-browser": "^6.1.10",
-    "@angular/platform-browser-dynamic": "^6.1.10",
-    "@angular/router": "^6.1.10",
+    "@angular/common": "^9.0.6",
+    "@angular/compiler": "^9.0.6",
+    "@angular/core": "^9.0.6",
+    "@angular/forms": "^9.0.6",
+    "@angular/platform-browser": "^9.0.6",
+    "@angular/platform-browser-dynamic": "^9.0.6",
+    "@angular/router": "^9.0.6",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
@@ -36,7 +36,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.6",
     "@angular/cli": "^9.0.6",
-    "@angular/compiler-cli": "^6.1.10",
+    "@angular/compiler-cli": "^9.0.6",
     "@types/bootstrap": "^3.3.32",
     "@types/jasmine": "2.5.38",
     "@types/jquery": "^2.0.40",
@@ -52,6 +52,6 @@
     "protractor": "~4.0.13",
     "ts-node": "1.2.1",
     "tslint": "^4.0.2",
-    "typescript": "~2.9.2"
+    "typescript": "~3.7.5"
   }
 }
