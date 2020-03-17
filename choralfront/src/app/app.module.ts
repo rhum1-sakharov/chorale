@@ -51,8 +51,6 @@ import {LoginComponent} from "./login/login.component";
 import {DiversComponent} from "./admin/divers/divers.component";
 import {DiversService} from "./services/divers/divers.service";
 import {VisitorsService} from "./services/visitors/visitors.service";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 
 
 @NgModule({

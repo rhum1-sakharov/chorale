@@ -2,13 +2,12 @@ import {Observable, throwError as observableThrowError} from 'rxjs';
 
 import {catchError, map} from 'rxjs/operators';
 import {Injectable, OnInit} from '@angular/core';
-import {Http} from '@angular/http';
 
 import {Credentials} from "./credentials";
 import {JwtHelper, tokenNotExpired} from 'angular2-jwt';
 
 
-import {AUTH, OPTIONS} from "../../constants";
+import {AUTH} from "../../constants";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 
@@ -30,7 +29,7 @@ export class AuthService implements OnInit {
 
     return this.http.post('api/auth', credentials).pipe(
       catchError(error => observableThrowError(error)),
-      map(data => {
+      map((data:any) => {
           localStorage.setItem(AUTH.token, data.token);
           return data.token;
         }

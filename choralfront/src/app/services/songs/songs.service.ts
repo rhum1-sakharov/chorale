@@ -2,7 +2,7 @@ import {throwError as observableThrowError} from 'rxjs';
 
 import {catchError, map} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
-import {Headers, RequestOptions} from "@angular/http";
+
 import {Song} from "./song";
 
 
@@ -34,9 +34,7 @@ export class SongsService {
 
   deleteSong(id: number) {
     let idLet = id;
-    let headers = new Headers();
-    headers.append('Authorization',localStorage.getItem(AUTH.token));
-    let options = new RequestOptions({headers: headers});
+
     return this.http.delete('api/songs/delete/' + id,{
       headers: new HttpHeaders().set('Authorization', localStorage.getItem(AUTH.token))
     }).pipe(

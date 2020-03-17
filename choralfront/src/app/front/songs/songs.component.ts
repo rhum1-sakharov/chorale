@@ -2,7 +2,7 @@ import {Component, OnInit, HostBinding} from "@angular/core";
 import {Router, ActivatedRoute, Route} from "@angular/router";
 import {SongsService} from "../../services/songs/songs.service";
 import {Song} from "../../services/songs/song";
-import {slideInDownAnimation} from "../../animations";
+// import {slideInDownAnimation} from "../../animations";
 import any = jasmine.any;
 
 @Component({
@@ -11,7 +11,7 @@ import any = jasmine.any;
   providers: [SongsService],
   templateUrl: './songs.component.html',
   styleUrls: ['./songs.component.less'],
-  animations: [slideInDownAnimation]
+  // animations: [slideInDownAnimation]
 })
 export class SongsComponent implements OnInit {
 
@@ -26,7 +26,7 @@ export class SongsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.songsService.getSongs().then(songs => this.songs = songs);
+    this.songsService.getSongs().subscribe(songs => this.songs = songs);
     this.route.data.subscribe(data => {
       this.routeData = data;
       this.title = this.routeData.title;

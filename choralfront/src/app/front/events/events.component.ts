@@ -1,15 +1,15 @@
-import {Component, OnInit, HostBinding} from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import {Feed} from "../../services/feeds/feed";
-import {Router, ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {FeedsService} from "../../services/feeds/feeds.service";
-import {slideInDownAnimation} from "../../animations";
+// import {slideInDownAnimation} from "../../animations";
 
 @Component({
 
   selector: 'app-events',
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.less'],
-  animations: [ slideInDownAnimation ]
+  // animations: [ slideInDownAnimation ]
 })
 export class EventsComponent implements OnInit {
 
@@ -25,7 +25,7 @@ export class EventsComponent implements OnInit {
   constructor(private router:Router,private route:ActivatedRoute, private feedService:FeedsService) { }
 
   ngOnInit() {
-    this.feedService.getFeedsByType('events').then(feeds => this.feeds = feeds);
+    this.feedService.getFeedsByType('events').subscribe(feeds => this.feeds = feeds);
     this.route.data.subscribe(data => {
       this.routeData = data;
       this.title = this.routeData.title;

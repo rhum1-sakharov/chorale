@@ -2,7 +2,7 @@ import {Component, OnInit, HostBinding} from '@angular/core';
 import {Feed} from "../../services/feeds/feed";
 import {Router, ActivatedRoute} from "@angular/router";
 import {FeedsService} from "../../services/feeds/feeds.service";
-import {slideInDownAnimation} from "../../animations";
+// import {slideInDownAnimation} from "../../animations";
 
 
 @Component({
@@ -10,7 +10,7 @@ import {slideInDownAnimation} from "../../animations";
   providers: [FeedsService],
   templateUrl: './trombi.component.html',
   styleUrls: ['./trombi.component.less'],
-  animations: [ slideInDownAnimation ]
+  // animations: [ slideInDownAnimation ]
 })
 export class TrombiComponent implements OnInit {
 
@@ -26,7 +26,7 @@ export class TrombiComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.feedService.getFeedsByType('trombi').then(feeds => {
+    this.feedService.getFeedsByType('trombi').subscribe(feeds => {
       this.feeds = feeds
       this.images = [];
       for (let f in feeds) {

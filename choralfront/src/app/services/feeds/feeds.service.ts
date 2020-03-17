@@ -2,7 +2,7 @@ import {throwError as observableThrowError} from 'rxjs';
 
 import {catchError, map} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
-import {Headers, RequestOptions} from "@angular/http";
+
 import {Feed} from "./feed";
 
 
@@ -61,9 +61,6 @@ export class FeedsService {
     formData.append('id', feed.id+'');
 
 
-    let headers = new Headers();
-    headers.append('Authorization', localStorage.getItem(AUTH.token));
-    let options = new RequestOptions({headers: headers});
     let url = 'api/feeds/add';
 
 
@@ -76,9 +73,6 @@ export class FeedsService {
 
   deleteFeed(id: number) {
     let idLet = id;
-    let headers = new Headers();
-    headers.append('Authorization', localStorage.getItem(AUTH.token));
-    let options = new RequestOptions({headers: headers});
 
     return this.http.delete('api/feeds/delete/' + id, {
       headers: new HttpHeaders().set('Authorization', localStorage.getItem(AUTH.token))

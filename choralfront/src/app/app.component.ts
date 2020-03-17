@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from "@angular/router";
 import {VisitorsService} from "./services/visitors/visitors.service";
 import {DiversService} from "./services/divers/divers.service";
+import {Config} from "./services/divers/config";
 
 @Component({
   selector: 'app-root',
@@ -18,8 +19,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.visitorService.getNbVisitors().then(message => this.nbVisitors = message.valueMsg);
-    this.diversServive.isAudioEnabled().then(config => {
+    this.visitorService.getNbVisitors().subscribe(message => this.nbVisitors = message.valueMsg);
+    this.diversServive.isAudioEnabled().subscribe((config:Config) => {
       this.audioEnabled = config.value === 'true' ? true : false;
     });
   }

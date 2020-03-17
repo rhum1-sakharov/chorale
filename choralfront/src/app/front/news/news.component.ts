@@ -3,7 +3,7 @@ import {Component, OnInit, HostBinding} from '@angular/core';
 import {Feed} from "../../services/feeds/feed";
 import {Router, ActivatedRoute} from "@angular/router";
 import {FeedsService} from "../../services/feeds/feeds.service";
-import {slideInDownAnimation} from "../../animations";
+// import {slideInDownAnimation} from "../../animations";
 
 
 
@@ -13,7 +13,7 @@ import {slideInDownAnimation} from "../../animations";
   providers:[FeedsService],
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.less'],
-  animations: [ slideInDownAnimation ]
+  // animations: [ slideInDownAnimation ]
 })
 export class NewsComponent implements OnInit {
 
@@ -28,7 +28,7 @@ export class NewsComponent implements OnInit {
   constructor(private router:Router,private route:ActivatedRoute, private feedService:FeedsService) { }
 
   ngOnInit() {
-    this.feedService.getFeedsByType('actus').then(feeds => {
+    this.feedService.getFeedsByType('actus').subscribe(feeds => {
       this.feeds = feeds;
 
       $('.carousel').carousel();

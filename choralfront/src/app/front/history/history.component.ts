@@ -1,15 +1,15 @@
-import {Component, OnInit, Sanitizer, HostBinding} from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import {Feed} from "../../services/feeds/feed";
-import {Router, ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {FeedsService} from "../../services/feeds/feeds.service";
-import {slideInDownAnimation} from "../../animations";
+// import {slideInDownAnimation} from "../../animations";
 
 @Component({
 selector: 'app-history',
   providers: [FeedsService],
   templateUrl: './history.component.html',
   styleUrls: ['./history.component.less'],
-  animations: [ slideInDownAnimation ]
+  // animations: [ slideInDownAnimation ]
 })
 export class HistoryComponent implements OnInit {
 
@@ -25,7 +25,7 @@ export class HistoryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.feedService.getFeedsByType('history').then(feeds => this.feeds = feeds);
+    this.feedService.getFeedsByType('history').subscribe(feeds => this.feeds = feeds);
     this.route.data.subscribe(data => {
       this.routeData = data;
       this.title = this.routeData.title;

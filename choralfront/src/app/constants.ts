@@ -1,4 +1,4 @@
-import {Headers, RequestOptions} from "@angular/http";
+
 /**
  * Created by romain on 28/12/2016.
  */
@@ -49,11 +49,6 @@ export const PHOTO_WIDTHS = [
   {label: "1024px", value: 1024},
   {label: "2048px", value: 2048}
 ];
-
-export const HEADERS_JSON = new Headers();
-HEADERS_JSON.append('Accept', 'application/json');
-
-export const OPTIONS = new RequestOptions({headers: HEADERS_JSON});
 
 
 
