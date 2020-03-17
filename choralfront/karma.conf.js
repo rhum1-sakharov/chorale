@@ -21,20 +21,11 @@ module.exports = function (config) {
       'text/x-typescript': ['ts','tsx']
     },
     remapIstanbulReporter: {
-      dir: require('path').join(__dirname, 'coverage'), reports: {
+      dir: require('path').join(__dirname, 'coverage'), dir: require('path').join(__dirname, 'coverage'), reports: {
         html: 'coverage',
         lcovonly: './coverage/coverage.lcov'
       }
     },
     
-    reporters: config.angularCli && config.angularCli.codeCoverage
-              ? ['progress', 'karma-remap-istanbul']
-              : ['progress'],
-    port: 9876,
-    colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false
-  });
+    reporters: config.);
 };
