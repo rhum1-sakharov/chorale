@@ -35,7 +35,7 @@ export class DiversComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.diversService.isAudioEnabled().then(config => {
+    this.diversService.isAudioEnabled().subscribe((config:any) => {
       this.audioEnabled = config.value === 'true' ? true : false;
       this.cssForm.controls['audioEnabled'].setValue(this.audioEnabled);
     });
@@ -45,7 +45,7 @@ export class DiversComponent implements OnInit {
 
     if (this.cssForm.valid) {
       this.diversService.savePreferences(this.bgFile,this.audioFile, this.cssForm.value.themes, this.cssForm.value.audioEnabled)
-        .then(res => {
+        .subscribe(res => {
           console.log('saved css');
           window.location.reload();
         });
@@ -55,13 +55,17 @@ export class DiversComponent implements OnInit {
   fileChangeBg(event) {
     let fileList: FileList = event.target.files;
     this.bgFile = fileList[0];
-    this.cssForm.controls['bgPhoto'].updateValueAndValidity(this.bgFile);
+
+    // TODO
+    // this.cssForm.controls['bgPhoto'].updateValueAndValidity(this.bgFile);
   }
 
   fileChangeAudio(event) {
     let fileList: FileList = event.target.files;
     this.audioFile = fileList[0];
-    this.cssForm.controls['audioFile'].updateValueAndValidity(this.audioFile);
+
+    // TODO
+    // this.cssForm.controls['audioFile'].updateValueAndValidity(this.audioFile);
   }
 
 }

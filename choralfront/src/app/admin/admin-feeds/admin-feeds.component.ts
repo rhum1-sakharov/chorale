@@ -57,7 +57,7 @@ export class AdminFeedsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.feedsService.getFeeds().then(feeds => this.feeds = feeds);
+    this.feedsService.getFeeds().subscribe(feeds => this.feeds = feeds);
 
     this.fr = FRENCH_CALENDAR;
   }
@@ -96,7 +96,7 @@ export class AdminFeedsComponent implements OnInit {
       }
 
       this.feedsService.createFeed(this.feedForm.value, this.feedFile)
-        .then(feed => {
+        .subscribe(feed => {
           this.feed = feed;
           if (this.newFeed === true) {
             this.feeds.push(this.feed);
@@ -145,7 +145,8 @@ export class AdminFeedsComponent implements OnInit {
   fileChange(event) {
     let fileList: FileList = event.target.files;
     this.feedFile = fileList[0];
-    this.feedForm.controls['photo'].updateValueAndValidity(this.feedFile);
+    // TODO
+    // this.feedForm.controls['photo'].updateValueAndValidity(this.feedFile);
   }
 
 }

@@ -1,36 +1,32 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
-import {RouterModule}  from '@angular/router';
-import {LOCALE_ID} from '@angular/core';
-import {tokenNotExpired, JwtHelper} from 'angular2-jwt';
+import {JwtHelper} from 'angular2-jwt';
 /**
  * PrimeNG COMPONENT
  * */
 import {
-  PanelModule,
-  CarouselModule,
-  LightboxModule,
-  GalleriaModule,
-  DataGridModule,
-  RadioButtonModule,
-  EditorModule,
-  DataTableModule,
-  SharedModule,
-  InputTextModule,
   ButtonModule,
-  TabViewModule,
-  DialogModule,
   CalendarModule,
-  FileUploadModule,
+  CarouselModule,
+  DataGridModule,
+  DataTableModule,
+  DialogModule,
   DropdownModule,
-  SelectButtonModule,
-  ListboxModule,
+  EditorModule,
+  FileUploadModule,
+  GalleriaModule,
+  GrowlModule,
   InputSwitchModule,
-  GrowlModule
+  InputTextModule,
+  LightboxModule,
+  ListboxModule,
+  PanelModule,
+  RadioButtonModule,
+  SelectButtonModule,
+  SharedModule,
+  TabViewModule
 } from 'primeng/primeng';
-
 /**
  * Custom components
  * */
@@ -55,7 +51,7 @@ import {LoginComponent} from "./login/login.component";
 import {DiversComponent} from "./admin/divers/divers.component";
 import {DiversService} from "./services/divers/divers.service";
 import {VisitorsService} from "./services/visitors/visitors.service";
-
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -78,9 +74,9 @@ import {VisitorsService} from "./services/visitors/visitors.service";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
     InputTextModule,
     DataTableModule,
     ButtonModule,

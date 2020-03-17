@@ -1,21 +1,20 @@
-import { Injectable } from '@angular/core';
-import {Http} from "@angular/http";
-import {Message} from "./message";
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {catchError} from "rxjs/operators";
 
 @Injectable()
 export class VisitorsService {
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) {
+  }
 
-  getNbVisitors(): Promise<Message> {
-    let url='api/visitors/nbvisitors';
+  getNbVisitors() {
+    let url = 'api/visitors/nbvisitors';
 
     return this.http.get(url)
-      .toPromise()
-      .then(response =>
-        response.json() as Message
-      )
-      .catch(this.handleError);
+      .pipe(
+        catchError(err => this.handleError(err))
+      );
   }
 
 

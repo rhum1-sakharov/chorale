@@ -1,46 +1,43 @@
-import { Injectable } from '@angular/core';
-import {Headers, RequestOptions, Http} from "@angular/http";
+import {throwError as observableThrowError} from 'rxjs';
+
+import {catchError, map} from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {Headers, RequestOptions} from "@angular/http";
 import {Feed} from "./feed";
-import {FilesService} from "../files/files.service";
 
 
-import 'rxjs/add/operator/toPromise';
-import {Observable} from "rxjs/Observable";
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
 import {AUTH} from "../../constants";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Injectable()
 export class FeedsService {
 
-  constructor(private http: Http) { }
-
-  getFeeds(): Promise<Feed[]> {
-    let url='api/feeds?sort=top,desc&size=9999';
-    let headers = new Headers();
-    headers.append('Authorization',localStorage.getItem(AUTH.token));
-    let options = new RequestOptions({headers: headers});
-    return this.http.get(url,options)
-      .toPromise()
-      .then(response =>
-        response.json()._embedded.feeds as Feed[]
-      )
-      .catch(this.handleError);
+  constructor(private http: HttpClient) {
   }
 
-  getFeedsByType(type:string): Promise<Feed[]> {
-    let url = 'api/feeds/search/types?type='+type+'&sort=top,desc&sort=creationDate,desc&size=9999';
-    return this.http.get(url)
-      .toPromise()
-      .then(response =>
-        response.json()._embedded.feeds as Feed[]
-      )
-      .catch(this.handleError);
+  getFeeds() {
+    let url = 'api/feeds?sort=top,desc&size=9999';
+
+    return this.http.get(url, {
+      headers: new HttpHeaders().set('Authorization', localStorage.getItem(AUTH.token))
+    }).pipe(
+      map((response: any) => response._embedded.feeds),
+      catchError(error => this.handleError(error))
+    )
+
+  }
+
+  getFeedsByType(type: string) {
+    let url = 'api/feeds/search/types?type=' + type + '&sort=top,desc&sort=creationDate,desc&size=9999';
+    return this.http.get(url).pipe(
+      map((response: any) => response._embedded.feeds),
+      catchError(error => this.handleError(error))
+    );
+
   }
 
 
-  createFeed(feed: Feed, feedFile: File): Promise<Feed> {
+  createFeed(feed: Feed, feedFile: File){
 
     let formData: FormData = new FormData();
 
@@ -51,40 +48,42 @@ export class FeedsService {
       formData.append('myFile', feedFile, feedFile.name);
     }
 
-    formData.append('photoEnabled', feed.photoEnabled);
+    formData.append('photoEnabled', feed.photoEnabled?'true':'false');
 
     formData.append('title', feed.title);
     formData.append('content', feed.content);
-    formData.append('creationDate', feed.creationDate.getTime());
+    formData.append('creationDate', feed.creationDate.getTime()+'');
     formData.append('author', feed.author);
     formData.append('type', feed.type);
-    formData.append('top', feed.top);
+    formData.append('top', feed.top ? 'true':'false');
     formData.append('imagePosition', feed.imagePosition);
     formData.append('imageWidth', feed.imageWidth);
-    formData.append('id', feed.id);
+    formData.append('id', feed.id+'');
 
 
     let headers = new Headers();
-    headers.append('Authorization',localStorage.getItem(AUTH.token));
+    headers.append('Authorization', localStorage.getItem(AUTH.token));
     let options = new RequestOptions({headers: headers});
-    let url ='api/feeds/add';
-    return this.http.post(url, formData, options)
-      .map(res => res.json())
-      .catch(error => Observable.throw(error))
-      .map(news => {
-          return news;
-        }
-      ).toPromise();
+    let url = 'api/feeds/add';
+
+
+    return this.http.post(url, formData,{
+      headers: new HttpHeaders().set('Authorization', localStorage.getItem(AUTH.token))
+    } ).pipe(
+      catchError(error => this.handleError(error))
+    );
   }
 
   deleteFeed(id: number) {
-    let idLet= id;
+    let idLet = id;
     let headers = new Headers();
-    headers.append('Authorization',localStorage.getItem(AUTH.token));
+    headers.append('Authorization', localStorage.getItem(AUTH.token));
     let options = new RequestOptions({headers: headers});
 
-    return this.http.delete('api/feeds/delete/' + id,options)
-      .catch(error => Observable.throw(error))
+    return this.http.delete('api/feeds/delete/' + id, {
+      headers: new HttpHeaders().set('Authorization', localStorage.getItem(AUTH.token))
+    }).pipe(
+      catchError(error => observableThrowError(error)))
       .subscribe(
         data => console.log(data),
         error => console.log(error)

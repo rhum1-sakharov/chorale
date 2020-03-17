@@ -1,54 +1,39 @@
+import {throwError as observableThrowError} from 'rxjs';
+
+import {catchError} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
-import {Headers, RequestOptions, Http} from "@angular/http";
 import {AUTH} from "../../constants";
-
-
-import 'rxjs/add/operator/toPromise';
-import {Observable} from "rxjs/Observable";
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
-import {Config} from "./config";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Injectable()
 export class DiversService {
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
   }
 
-  isAudioEnabled(): Promise<Config> {
+  isAudioEnabled() {
     let url = 'api/css/isaudioenabled';
 
-    return this.http.get(url)
-      .toPromise()
-      .then(response =>
-        response.json() as Config
-      )
-      .catch(error=> Observable.throw(error));
+    return this.http.get(url).pipe(
+      catchError(error => observableThrowError(error))
+    );
+
   }
 
-  getAudio(): Promise<any> {
+  getAudio() {
     let url = 'api/css/audio';
-    return this.http.get(url)
-      .map(res => {
-        return res;
-      })
-      .catch(error => Observable.throw(error))
-      .toPromise();
+    return this.http.get(url).pipe(
+      catchError(error => observableThrowError(error)));
+
   }
 
-  getTheme(): Promise<any> {
+  getTheme() {
     let url = 'api/css/theme';
-    return this.http.get(url)
-      .map(res => res.json())
-      .catch(error => Observable.throw(error))
-      .map(res => {
-          return res;
-        }
-      ).toPromise();
+    return this.http.get(url).pipe(
+      catchError(error => observableThrowError(error)));
   }
 
-  savePreferences(bgPhoto: File, audioFile: File, theme: string, audioEnabled: boolean): Promise<any> {
+  savePreferences(bgPhoto: File, audioFile: File, theme: string, audioEnabled: boolean) {
 
     let formData: FormData = new FormData();
 
@@ -65,20 +50,14 @@ export class DiversService {
     }
 
     formData.append('theme', theme);
-    formData.append('audioEnabled', audioEnabled);
+    formData.append('audioEnabled', audioEnabled?'true':'false');
 
     let url = 'api/css/save';
-    let headers = new Headers();
-    headers.append('Authorization', localStorage.getItem(AUTH.token));
-    let options = new RequestOptions({headers: headers});
 
-    return this.http.post(url, formData, options)
-      .map(res => res.json())
-      .catch(error => Observable.throw(error))
-      .map(res => {
-          return res;
-        }
-      ).toPromise();
+    return this.http.post(url, formData, {
+      headers: new HttpHeaders().set('Authorization', localStorage.getItem(AUTH.token))
+    }).pipe(
+      catchError(error => observableThrowError(error)));
   }
 
 }

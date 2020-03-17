@@ -51,7 +51,7 @@ export class AdminSongsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.songsService.getSongs().then(songs => this.songs = songs);
+    this.songsService.getSongs().subscribe(songs => this.songs = songs);
 
     this.fr = FRENCH_CALENDAR;
   }
@@ -67,7 +67,7 @@ export class AdminSongsComponent implements OnInit {
       }
 
       this.songsService.createSong(this.songForm.value, this.songFile)
-        .then(song => {
+        .subscribe(song => {
           this.song = song;
           if (this.newSong === true) {
             this.songs.push(this.song);
@@ -127,7 +127,9 @@ export class AdminSongsComponent implements OnInit {
   fileChange(event) {
     let fileList: FileList = event.target.files;
     this.songFile = fileList[0];
-    this.nwcFile.updateValueAndValidity(this.songFile);
+
+    //TODO
+    // this.nwcFile.updateValueAndValidity(this.songFile);
   }
 
 

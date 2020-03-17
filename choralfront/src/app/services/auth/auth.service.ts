@@ -1,25 +1,23 @@
+import {Observable, throwError as observableThrowError} from 'rxjs';
+
+import {catchError, map} from 'rxjs/operators';
 import {Injectable, OnInit} from '@angular/core';
-import {Http, Headers, RequestOptions} from '@angular/http';
-import 'rxjs/add/operator/map';
+import {Http} from '@angular/http';
+
 import {Credentials} from "./credentials";
-import {Message} from "primeng/primeng";
-import {tokenNotExpired, JwtHelper} from 'angular2-jwt';
+import {JwtHelper, tokenNotExpired} from 'angular2-jwt';
 
 
-import 'rxjs/add/operator/toPromise';
-import {Observable} from "rxjs/Observable";
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
-import {AUTH, HEADERS_JSON, OPTIONS} from "../../constants";
+import {AUTH, OPTIONS} from "../../constants";
 import {Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable()
 export class AuthService implements OnInit {
 
   jwtService: JwtHelper;
 
-  constructor(private http: Http, private jwtHelper: JwtHelper, private router: Router) {
+  constructor(private http: HttpClient, private jwtHelper: JwtHelper, private router: Router) {
     this.jwtService = jwtHelper;
   }
 
@@ -30,14 +28,13 @@ export class AuthService implements OnInit {
 
   login(credentials: Credentials): Observable<boolean> {
 
-    return this.http.post('api/auth', credentials, OPTIONS)
-      .map(res => res.json())
-      .catch(error => Observable.throw(error))
-      .map(data => {
+    return this.http.post('api/auth', credentials).pipe(
+      catchError(error => observableThrowError(error)),
+      map(data => {
           localStorage.setItem(AUTH.token, data.token);
           return data.token;
         }
-      );
+      ),);
   }
 
   logout() {

@@ -19,7 +19,7 @@ export class AdminMiscComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.songsService.getSongsByExtension('mp3').then(songs => {
+    this.songsService.getSongsByExtension('mp3').subscribe(songs => {
       this.mp3s = [];
       for (let s in songs) {
         this.mp3s.push({label: songs[s].title, value: songs[s].id});
