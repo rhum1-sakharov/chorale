@@ -1,0 +1,198 @@
+= CBD84 Docker
+
+== MySQL
+
+docs mysql : https://hub.docker.com/_/mysql/
+
+=== build img-cbd84-mysql with cbd84.sql
+
+docker build -t img-cbd84-mysql ./src/main/docker/mysql
+
+=== start mysql
+
+
+Windows :
+docker run --name ctn-cbd84-mysql -p 3306:3306 -v "C:\WORK_SHARE\dev\tools\docker\mysql\data":/var/lib/mysql -e MYSQL_ROOT_PASSWORD=toto9797 -d  img-cbd84-mysql
+
+Linux :
+docker run --name ctn-cbd84-mysql --restart always -p 3306:3306 -v  /data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=toto9797 -d  img-cbd84-mysql
+
+== Tomcat (utilisé pour l'ancienne version du CBD84)
+
+docker pull tomcat
+
+docker run --name ctn-cbd84-tomcat -v /data/tomcat:/usr/local/tomcat   -p 8082:8080  -d tomcat:9-jre8-alpine
+
+
+== SpringBoot
+
+=== build img-cbd84-springboot
+
+docker build -t img-cbd84-springboot ./src/main/docker/springboot
+
+=== link cbd84-springboot container to mysql
+
+docker run --name ctn-cbd84-springboot  -p 8080:8080 --link ctn-cbd84-mysql:db.mysql.cbd84 -d img-cbd84-springboot
+
+== HTTPD
+
+=== build img-cbd84-httpd
+
+docker build -t img-cbd84-httpd ./src/main/docker/apache2
+
+=== start httpd
+
+docker run --name ctn-cbd84-httpd -ti --link ctn-cbd84-springboot:springboot.cbd84 -p 80:80 -v "C:\WORK_SHARE\dev\tools\docker\httpd\conf":/usr/local/apache2/conf -v "C:\WORK_SHARE\dev\workspaces\workspace_cbd\cbd84\www":/usr/local/apache2/htdocs -d img-cbd84-httpd
+
+== Continuous Integration
+
+cd ./ci
+
+. Start
+docker-compose up -d
+
+.Stop
+docker-compose stop
+
+== Jenkins
+
+lien doc docker jenkins : https://hub.docker.com/_/jenkins/
+
+=== build img-jenkins
+
+docker build -t img-jenkins ./src/main/docker/jenkins
+
+TODO : add zip command in dockerfile and build it
+
+=== start jenkins
+
+docker run -p 8090:8080 -p 50000:50000 --restart always --name ctn-jenkins -v /tmp:/tmp  -v /data/jenkins:/var/jenkins_home -d img-jenkins
+
+#login/pwd jenkins
+admin/admin
+
+== SonarQube
+
+=== build img-sonarqube
+
+docker build -t img-sonarqube ./src/main/docker/sonarqube
+
+=== start sonarqube
+
+==== interactive mode
+
+docker run -ti --name ctn-sonarqube --restart always -v /data/sonarqube:/opt/sonarqube --link ctn-cbd84-mysql:db.mysql.cbd84  -p 9000:9000 -p 9092:9092 -e SONARQUBE_JDBC_USERNAME=sonar  -e SONARQUBE_JDBC_PASSWORD=sonar  -e SONARQUBE_JDBC_URL=jdbc:mysql://db.mysql.cbd84:3306/sonar?useUnicode=true&amp;characterEncoding=utf8  img-sonarqube /bin/bash
+
+==== background mode
+
+docker run  --name ctn-sonarqube --restart always -v /data/sonarqube:/opt/sonarqube --link ctn-cbd84-mysql:db.mysql.cbd84  -p 9000:9000 -p 9092:9092 -e SONARQUBE_JDBC_USERNAME=sonar  -e SONARQUBE_JDBC_PASSWORD=sonar  -e SONARQUBE_JDBC_URL=jdbc:mysql://db.mysql.cbd84:3306/sonar?useUnicode=true&amp;characterEncoding=utf8 -d img-sonarqube
+
+
+== GitLab
+
+=== build img-gitlab
+
+docker build -t img-gitlab ./src/main/docker/gitlab
+
+=== background mode
+
+sudo docker run  --detach \
+    --hostname gitlab.cbd84.fr \
+    --publish 44391:443 --publish 8091:80 --publish 2291:22 -p 8060:8060 -p 54391:5432\
+    --name ctn-gitlab \
+    --restart always \
+    --volume /data/gitlab/config:/etc/gitlab \
+    --volume /data/gitlab/logs:/var/log/gitlab \
+    --volume /data/gitlab/data:/var/opt/gitlab \
+    img-gitlab
+
+=== interactive mode
+
+sudo docker run  -ti \
+    --hostname gitlab.cbd84.fr \
+    --publish 44391:443 --publish 8091:80 --publish 2291:22 -p 8060:8060 -p 54391:5432\
+    --name ctn-gitlab \
+    --restart always \
+    --volume /data/gitlab/config:/etc/gitlab \
+    --volume /data/gitlab/logs:/var/log/gitlab \
+    --volume /data/gitlab/data:/var/opt/gitlab \
+   img-gitlab /bin/sh
+
+=== comptes
+
+** administrateur
+
+    root/admin9797
+
+** contributeur
+
+    romain/romain9797
+
+== Démarrage CBD84
+
+=== start mysql
+
+docker run --name ctn-cbd84-mysql -p 3306:3306 -v "C:\WORK_SHARE\dev\tools\docker\mysql\data":/var/lib/mysql -e MYSQL_ROOT_PASSWORD=toto9797 -d  img-cbd84-mysql
+
+=== start cbd84-springboot container and link it to mysql
+
+docker run --name ctn-cbd84-springboot  -p 8080:8080 --link ctn-cbd84-mysql:db.mysql.cbd84 -d img-cbd84-springboot
+
+=== start httpd and link it to springboot
+
+docker run --name ctn-cbd84-httpd -ti --link ctn-cbd84-springboot:springboot.cbd84 -p 80:80 -v "C:\WORK_SHARE\dev\tools\docker\httpd\conf":/usr/local/apache2/conf -v "C:\WORK_SHARE\dev\workspaces\workspace_cbd\cbd84\www":/usr/local/apache2/htdocs -d img-cbd84-httpd
+
+
+== Créer une registry docker
+
+** Start your registry
+
+docker run -d -p 5000:5000 --name registry registry:2
+
+** Pull (or build) some image from the hub
+
+docker pull ubuntu
+
+** Tag the image so that it points to your registry
+
+docker tag ubuntu localhost:5000/myfirstimage
+
+** Push it
+
+docker push localhost:5000/myfirstimage
+
+** Pull it back
+
+docker pull localhost:5000/myfirstimage
+
+** Now stop your registry and remove all data
+
+docker stop registry && docker rm -v registry
+
+
+
+== Annexes
+
+=== Git
+
+** Enregistrer le mot de passe en mode http pour ne le taper qu'une fois
+
+http://stackoverflow.com/questions/5343068/is-there-a-way-to-skip-password-typing-when-using-https-on-github
+
+git config --global credential.helper cache
+
+... which tells Git to keep your password cached in memory for (by default) 15 minutes. You can set a longer timeout with:
+
+git config --global credential.helper "cache --timeout=3600"
+
+
+
+
+
+= Docker compose
+
+docker-compose build
+
+docker-compose up -d
+
+docker-compose down

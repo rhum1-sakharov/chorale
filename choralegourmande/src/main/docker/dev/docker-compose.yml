@@ -1,0 +1,25 @@
+version: "2"
+
+######################################
+# CBD84 Architecture
+######################################
+
+services:
+
+  mysql:
+    container_name: ctn_chorale_mysql
+    build: ./mysql
+    image: img_chorale_mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - chorale
+    environment:
+      - MYSQL_ROOT_PASSWORD=toto9797
+    volumes:
+      - c:/data/chorale/mysql:/var/lib/mysql
+    restart: always
+
+networks:
+  chorale:
+    driver: bridge
