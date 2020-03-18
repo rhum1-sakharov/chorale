@@ -49,13 +49,18 @@ import {LoginComponent} from "./login/login.component";
 import {DiversComponent} from "./admin/divers/divers.component";
 import {DiversService} from "./services/divers/divers.service";
 import {VisitorsService} from "./services/visitors/visitors.service";
-import {JwtHelperService} from "@auth0/angular-jwt";
+import {JwtHelperService, JwtModule} from "@auth0/angular-jwt";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {registerLocaleData} from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import {AUTH} from "./constants";
 
 registerLocaleData(localeFr, 'fr');
+
+export function tokenGetter() {
+  return localStorage.getItem(AUTH.token);
+}
 
 
 @NgModule({
@@ -104,7 +109,13 @@ registerLocaleData(localeFr, 'fr');
     SelectButtonModule,
     ListboxModule,
     InputSwitchModule,
-    DataViewModule
+    DataViewModule,
+
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter
+      }
+    })
 
   ],
   exports:[

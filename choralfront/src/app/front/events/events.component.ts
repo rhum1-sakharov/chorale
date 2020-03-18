@@ -2,6 +2,7 @@ import {Component, HostBinding, OnInit} from '@angular/core';
 import {Feed} from "../../services/feeds/feed";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FeedsService} from "../../services/feeds/feeds.service";
+
 // import {slideInDownAnimation} from "../../animations";
 
 @Component({
@@ -14,7 +15,7 @@ import {FeedsService} from "../../services/feeds/feeds.service";
 export class EventsComponent implements OnInit {
 
 
-  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.display') display = 'block';
 
   title: string;
   routeData: any;
@@ -22,10 +23,13 @@ export class EventsComponent implements OnInit {
 
   feeds: Feed[];
 
-  constructor(private router:Router,private route:ActivatedRoute, private feedService:FeedsService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private feedService: FeedsService) {
+  }
 
   ngOnInit() {
+
     this.feedService.getFeedsByType('events').subscribe(feeds => this.feeds = feeds);
+
     this.route.data.subscribe(data => {
       this.routeData = data;
       this.title = this.routeData.title;

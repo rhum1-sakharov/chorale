@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da514925-ad96-4f71-8786-b307f6ceb8ac" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-ExtraBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/choralfront/src/assets/fonts/Reem_Kufi/OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/choralfront/src/assets/fonts/Reem_Kufi/ReemKufi-Regular.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choralegourmande/chorale-gourmande.iml" beforeDir="false" afterPath="$PROJECT_DIR$/choralegourmande/chorale-gourmande.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choralfront/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/choralfront/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choralfront/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/choralfront/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choralfront/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/choralfront/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choralfront/src/app/front/events/events.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/choralfront/src/app/front/events/events.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choralfront/src/app/front/events/events.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/choralfront/src/app/front/events/events.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choralfront/src/app/front/news/news.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/choralfront/src/app/front/news/news.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choralfront/src/app/front/news/news.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/choralfront/src/app/front/news/news.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choralfront/src/app/front/songs/songs.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/choralfront/src/app/front/songs/songs.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choralfront/src/app/services/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/choralfront/src/app/services/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choralfront/src/styles.less" beforeDir="false" afterPath="$PROJECT_DIR$/choralfront/src/styles.less" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/choralegourmande/target/" />
     <ignored path="choralegourmande/src/main/resources/application.yml" />
@@ -16,11 +35,11 @@
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choralfront/package.json">
+      <file leaf-file-name="styles.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choralfront/src/styles.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+            <state relative-caret-position="204">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -28,8 +47,8 @@
       <file leaf-file-name="app-routing.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/choralfront/src/app/app-routing.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="314">
+              <caret line="61" column="15" lean-forward="true" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -40,8 +59,8 @@
       <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/choralfront/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="102" column="21" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
+            <state relative-caret-position="161">
+              <caret line="109" column="18" lean-forward="true" selection-start-line="109" selection-start-column="18" selection-end-line="109" selection-end-column="18" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
                 <element signature="e#204#568#0" expanded="true" />
@@ -51,83 +70,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trombi.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/trombi/trombi.component.html">
+      <file leaf-file-name="login.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choralfront/src/app/login/login.component.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="login.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choralfront/src/app/login/login.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="289">
+              <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#ng-template#0;n#p-dataView#0;n#!!top" expanded="true" />
+                <element signature="e#0#48#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="songs.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/songs/songs.component.html">
+      <file leaf-file-name="auth.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/choralfront/src/app/services/auth/auth.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+            <state relative-caret-position="212">
+              <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
               <folding>
-                <element signature="n#style#0;n#colgroup#0;n#ng-template#1;n#p-table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#colgroup#1;n#ng-template#1;n#p-table#0;n#!!top" expanded="true" />
+                <element signature="e#0#68#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="songs.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/songs/songs.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-              <folding>
-                <element signature="e#0#61#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+      <file leaf-file-name="Baloo2-ExtraBold.ttf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-ExtraBold.ttf">
+          <provider selected="true" editor-type-id="fontseditor" />
         </entry>
       </file>
-      <file leaf-file-name="songs.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choralfront/src/app/services/songs/songs.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="83" column="25" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+      <file leaf-file-name="Baloo2-Medium.ttf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-Medium.ttf">
+          <provider selected="true" editor-type-id="fontseditor" />
         </entry>
       </file>
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-            </state>
-          </provider>
+      <file leaf-file-name="Baloo2-Regular.ttf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-Regular.ttf">
+          <provider selected="true" editor-type-id="fontseditor" />
         </entry>
       </file>
-      <file leaf-file-name="angular.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choralfront/angular.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.less" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/choralfront/src/styles.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="179" lean-forward="true" selection-start-line="179" selection-end-line="179" />
-            </state>
-          </provider>
+      <file leaf-file-name="Baloo2-SemiBold.ttf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-SemiBold.ttf">
+          <provider selected="true" editor-type-id="fontseditor" />
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Galler</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -138,8 +135,17 @@
         <option value="$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml.dist" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/choralfront/src/app/front/songs/songs.component.ts" />
         <option value="$PROJECT_DIR$/choralfront/src/app/front/songs/songs.component.html" />
+        <option value="$PROJECT_DIR$/choralfront/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/choralfront/src/app/front/news/news.component.html" />
+        <option value="$PROJECT_DIR$/choralfront/src/app/front/news/news.component.ts" />
+        <option value="$PROJECT_DIR$/choralfront/src/app/front/events/events.component.html" />
+        <option value="$PROJECT_DIR$/choralfront/src/app/front/events/events.component.ts" />
         <option value="$PROJECT_DIR$/choralfront/src/styles.less" />
+        <option value="$PROJECT_DIR$/choralfront/src/app/app-routing.module.ts" />
+        <option value="$PROJECT_DIR$/choralfront/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/choralfront/src/app/services/auth/auth.service.ts" />
       </list>
     </option>
   </component>
@@ -170,7 +176,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -203,6 +208,33 @@
               <item name="choralegourmande" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralegourmande" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="choralegourmande" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralegourmande" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="choralegourmande" type="462c0819:PsiDirectoryNode" />
+              <item name="jwt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralegourmande" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -214,6 +246,67 @@
               <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
               <item name="chorale" type="462c0819:PsiDirectoryNode" />
               <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="primeng" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="primeng" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="primeng" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="primeng" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="nova-light" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="primeng" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="nova-light" type="462c0819:PsiDirectoryNode" />
+              <item name="fonts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="primeng" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="rhea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -230,6 +323,44 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="front" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="events" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="events" type="462c0819:PsiDirectoryNode" />
+              <item name="events.component.ts" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="news.component.ts" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
@@ -239,16 +370,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="front" type="462c0819:PsiDirectoryNode" />
               <item name="songs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chorale" type="462c0819:PsiDirectoryNode" />
-              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="songs" type="462c0819:PsiDirectoryNode" />
-              <item name="songs.component.ts" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
@@ -265,7 +386,24 @@
               <item name="choralfront" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
@@ -281,10 +419,33 @@
               <item name="chorale" type="462c0819:PsiDirectoryNode" />
               <item name="choralfront" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="songs" type="462c0819:PsiDirectoryNode" />
-              <item name="songs.service.ts" type="620a8d5e:NestingTreeNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="fonts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="fonts" type="462c0819:PsiDirectoryNode" />
+              <item name="Baloo_2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="fonts" type="462c0819:PsiDirectoryNode" />
+              <item name="Reem_Kufi" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
@@ -297,6 +458,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -307,6 +469,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="SearchEverywhereHistoryKey" value="theme.css&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/node_modules/primeng/resources/themes/rhea/theme.css" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/choralegourmande" />
@@ -316,6 +479,8 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="ics" />
+    <property name="ts.external.directory.path" value="D:\WORKSHARE\dev\chorale\choralfront\node_modules\typescript\lib" />
+    <property name="typescript-compiler-editor-notification" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -393,6 +558,7 @@
       <updated>1584456164556</updated>
       <workItem from="1584456165752" duration="1211000" />
       <workItem from="1584457411828" duration="246000" />
+      <workItem from="1584537946740" duration="4108000" />
     </task>
     <task id="LOCAL-00001" summary="initial import">
       <created>1584456775795</created>
@@ -415,11 +581,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584481656601</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="chansons : UX 2">
+      <created>1584481980257</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584481980257</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1787000" />
+    <option name="totallyTimeSpent" value="6298000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -439,7 +612,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="TypeScript" order="8" />
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -447,50 +620,26 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38961038" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.33766234" />
-      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32900432" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3284055" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32900432" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32900432" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32900432" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
-      <window_info anchor="bottom" id="Messages" order="7" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3284055" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.33766234" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3284055" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32900432" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32900432" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info anchor="right" id="Bean Validation" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.38965154" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32900432" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -545,116 +694,10 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="initial import" />
     <MESSAGE value="chansons : UX" />
-    <option name="LAST_COMMIT_MESSAGE" value="chansons : UX" />
+    <MESSAGE value="chansons : UX 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="chansons : UX 2" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/constants.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/admin/divers/divers.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/news/news.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/history/history.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/events/events.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/admin/admin-feeds/admin-feeds.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/login/login.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/login/login.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/polyfills.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#136#164#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/admin/admin-songs/admin-songs.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/admin/admin-songs/admin-songs.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/admin/admin-misc/admin-misc.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/news/news.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -666,9 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -682,32 +722,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/events/events.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/history/history.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/news/news.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#1#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -764,13 +784,7 @@
     <entry file="file://$PROJECT_DIR$/choralfront/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/angular-cli.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/angular-cli.json" />
     <entry file="file://$PROJECT_DIR$/choralfront/src/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -779,13 +793,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/choralfront/src/app/services/auth/auth.service.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/choralfront/proxy.conf.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -804,48 +812,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/services/auth/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="102" column="21" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-            <element signature="e#204#568#0" expanded="true" />
-            <element signature="e#600#645#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/choralfront/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
+        <state relative-caret-position="442">
           <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/choralfront/angular.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="510">
           <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
         </state>
       </provider>
@@ -869,7 +845,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/choralfront/src/app/services/songs/songs.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
+        <state relative-caret-position="1258">
           <caret line="83" column="25" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
@@ -921,29 +897,154 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/songs/songs.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="442">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/JwtUserFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/songs/songs.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+        <state relative-caret-position="57">
+          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#colgroup#0;n#ng-template#1;n#p-table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#colgroup#1;n#ng-template#1;n#p-table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#colgroup#2;n#ng-template#1;n#p-table#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/assets/fonts/Reem_Kufi/ReemKufi-Regular.ttf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/node_modules/primeng/resources/themes/rhea/theme.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/node_modules/primeng/resources/themes/nova-light/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/news/news.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#1#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="70" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/news/news.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/events/events.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/events/events.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-Bold.ttf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/app.component.less">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-ExtraBold.ttf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-Medium.ttf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-SemiBold.ttf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/assets/fonts/Baloo_2/Baloo2-Regular.ttf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/choralfront/src/styles.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="179" lean-forward="true" selection-start-line="179" selection-end-line="179" />
+        <state relative-caret-position="204">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="61" column="15" lean-forward="true" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="109" column="18" lean-forward="true" selection-start-line="109" selection-start-column="18" selection-end-line="109" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+            <element signature="e#204#568#0" expanded="true" />
+            <element signature="e#600#645#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/login/login.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/services/auth/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

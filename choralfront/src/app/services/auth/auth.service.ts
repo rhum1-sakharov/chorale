@@ -15,15 +15,13 @@ import {JwtHelperService} from "@auth0/angular-jwt";
 @Injectable()
 export class AuthService implements OnInit {
 
-  jwtService: JwtHelperService;
+  jwtService: JwtHelperService = new JwtHelperService();
 
-  constructor(private http: HttpClient, private jwtHelper: JwtHelperService, private router: Router) {
-    this.jwtService = jwtHelper;
+  constructor(private http: HttpClient, private router: Router) {
+
   }
 
   ngOnInit(): void {
-
-    this.jwtHelper = new JwtHelperService();
   }
 
   login(credentials: Credentials): Observable<boolean> {
@@ -45,14 +43,22 @@ export class AuthService implements OnInit {
 
   checkUserAccess(role: string) {
     let userHasAccess: boolean = false;
-    if (this.jwtHelper.isTokenExpired(AUTH.token)) {
-      let token: any = this.jwtService.decodeToken(localStorage.getItem(AUTH.token));
-      //iterate over roles of user
-      token.sub.authorities.map(res => {
-        if (res.authority.substring(5) == role) {
-          userHasAccess = true;
-        }
-      });
+
+    const token= localStorage.getItem(AUTH.token);
+
+    if (!this.jwtService.isTokenExpired(token)) {
+      let tokenStr: any = this.jwtService.decodeToken(token);
+
+      if(tokenStr){
+        //iterate over roles of user
+        tokenStr.sub.authorities.map(res => {
+          if (res.authority.substring(5) == role) {
+            userHasAccess = true;
+          }
+        });
+      }
+
+
     }
     return userHasAccess;
   }
