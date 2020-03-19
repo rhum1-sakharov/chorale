@@ -1,7 +1,8 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostBinding, OnInit} from '@angular/core';
 import {Feed} from "../../services/feeds/feed";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FeedsService} from "../../services/feeds/feeds.service";
+import {UtilService} from "../../services/utils/util.service";
 
 // import {slideInDownAnimation} from "../../animations";
 
@@ -12,7 +13,7 @@ import {FeedsService} from "../../services/feeds/feeds.service";
   styleUrls: ['./events.component.less'],
   // animations: [ slideInDownAnimation ]
 })
-export class EventsComponent implements OnInit {
+export class EventsComponent implements OnInit,AfterViewInit {
 
 
   @HostBinding('style.display') display = 'block';
@@ -23,7 +24,7 @@ export class EventsComponent implements OnInit {
 
   feeds: Feed[];
 
-  constructor(private router: Router, private route: ActivatedRoute, private feedService: FeedsService) {
+  constructor(private router: Router, private route: ActivatedRoute, private feedService: FeedsService,public utils:UtilService) {
   }
 
   ngOnInit() {
@@ -34,6 +35,12 @@ export class EventsComponent implements OnInit {
       this.routeData = data;
       this.title = this.routeData.title;
     });
+  }
+
+  ngAfterViewInit(): void {
+
+    this.utils.activeRouteUrl=this.router.url;
+
   }
 
 }

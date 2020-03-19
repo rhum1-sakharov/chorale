@@ -11,16 +11,14 @@ import {UtilService} from "./services/utils/util.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit,AfterViewInit {
 
   audioEnabled: boolean = false;
   nbVisitors: string;
 
-  activeMenu='news';
-
   windowWidth:number;
 
-  constructor(public utils:UtilService,private router: Router, private route: ActivatedRoute, private visitorService: VisitorsService, private diversServive: DiversService) {
+  constructor(public utils:UtilService,private router: Router, public route: ActivatedRoute, private visitorService: VisitorsService, private diversServive: DiversService) {
   }
 
   @HostListener('window:resize', ['$event'])
@@ -28,9 +26,17 @@ export class AppComponent implements OnInit {
     this.windowWidth=window.innerWidth;
   }
 
+
   ngOnInit() {
 
     this.windowWidth=window.innerWidth;
+
+
+
+    // this.router.navigate([this.activeMenu]);
+
+
+
 
     this.visitorService.getNbVisitors().subscribe(message => this.nbVisitors = message.valueMsg);
     this.diversServive.isAudioEnabled().subscribe((config:Config) => {
@@ -39,5 +45,17 @@ export class AppComponent implements OnInit {
   }
 
 
+  getMarginTop() {
 
+    if(this.windowWidth>540){
+      return 125;
+    }
+
+    return 300;
+  }
+
+  ngAfterViewInit(): void {
+
+
+  }
 }

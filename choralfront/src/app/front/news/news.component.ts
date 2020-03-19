@@ -1,7 +1,8 @@
-import {Component, OnInit, HostBinding, HostListener} from '@angular/core';
+import {Component, OnInit, HostBinding, HostListener, AfterViewInit} from '@angular/core';
 import {Feed} from "../../services/feeds/feed";
 import {Router, ActivatedRoute} from "@angular/router";
 import {FeedsService} from "../../services/feeds/feeds.service";
+import {UtilService} from "../../services/utils/util.service";
 
 // import {slideInDownAnimation} from "../../animations";
 
@@ -14,7 +15,7 @@ import {FeedsService} from "../../services/feeds/feeds.service";
   styleUrls: ['./news.component.less'],
   // animations: [ slideInDownAnimation ]
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent implements OnInit,AfterViewInit {
 
 
   @HostBinding('style.display') display = 'block';
@@ -28,13 +29,13 @@ export class NewsComponent implements OnInit {
   photoWidth='200px';
 
 
-  constructor(private router: Router, private route: ActivatedRoute, private feedService: FeedsService) {
+  constructor(private router: Router,public utils:UtilService, private route: ActivatedRoute, private feedService: FeedsService) {
   }
 
   getPhotoWidth(){
-    let photoWidth='1050px';
+    let photoWidth='1000px';
     if(window.innerWidth<1200){
-      photoWidth=(window.innerWidth-100)+'px';
+      photoWidth=(window.innerWidth-175)+'px';
     }
     return photoWidth;
   }
@@ -77,5 +78,11 @@ export class NewsComponent implements OnInit {
 
   getGalleriaHeight() {
     return window.innerHeight -300;
+  }
+
+  ngAfterViewInit(): void {
+
+    this.utils.activeRouteUrl=this.router.url;
+
   }
 }

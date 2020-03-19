@@ -1,7 +1,8 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostBinding, OnInit} from '@angular/core';
 import {Feed} from "../../services/feeds/feed";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FeedsService} from "../../services/feeds/feeds.service";
+import {UtilService} from "../../services/utils/util.service";
 // import {slideInDownAnimation} from "../../animations";
 
 @Component({
@@ -11,7 +12,7 @@ selector: 'app-history',
   styleUrls: ['./history.component.less'],
   // animations: [ slideInDownAnimation ]
 })
-export class HistoryComponent implements OnInit {
+export class HistoryComponent implements OnInit,AfterViewInit {
 
 
   @HostBinding('style.display')   display = 'block';
@@ -20,7 +21,7 @@ export class HistoryComponent implements OnInit {
   routeData: any;
   feeds: Feed[];
 
-  constructor(private router: Router,private route:ActivatedRoute, private feedService: FeedsService) {
+  constructor(private router: Router,private route:ActivatedRoute, private feedService: FeedsService,public utils:UtilService) {
 
   }
 
@@ -30,6 +31,12 @@ export class HistoryComponent implements OnInit {
       this.routeData = data;
       this.title = this.routeData.title;
     });
+  }
+
+  ngAfterViewInit(): void {
+
+    this.utils.activeRouteUrl=this.router.url;
+
   }
 
 }

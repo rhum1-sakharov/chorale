@@ -1,10 +1,11 @@
-import {Component, OnInit, HostBinding} from "@angular/core";
+import {Component, OnInit, HostBinding, AfterViewInit} from "@angular/core";
 import {Router, ActivatedRoute, Route} from "@angular/router";
 import {SongsService} from "../../services/songs/songs.service";
 import {Song} from "../../services/songs/song";
 import { saveAs } from 'file-saver';
 // import {slideInDownAnimation} from "../../animations";
 import any = jasmine.any;
+import {UtilService} from "../../services/utils/util.service";
 
 @Component({
 
@@ -14,7 +15,7 @@ import any = jasmine.any;
   styleUrls: ['./songs.component.less'],
   // animations: [slideInDownAnimation]
 })
-export class SongsComponent implements OnInit {
+export class SongsComponent implements OnInit,AfterViewInit {
 
 
   @HostBinding('style.display') display = 'block';
@@ -31,7 +32,7 @@ export class SongsComponent implements OnInit {
     {field:'extension',header:'Extensions'}
     ];
 
-  constructor(private router: Router, private route: ActivatedRoute, private songsService: SongsService) {
+  constructor(private router: Router,public utils:UtilService, private route: ActivatedRoute, private songsService: SongsService) {
   }
 
   ngOnInit() {
@@ -52,5 +53,11 @@ export class SongsComponent implements OnInit {
       var blob = new Blob([response], {type:`application/${this.selectedSong.extension}`});
       saveAs(blob, `${this.selectedSong.title}.${this.selectedSong.extension}`);
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.utils.activeRouteUrl=this.router.url;
+
+
   }
 }

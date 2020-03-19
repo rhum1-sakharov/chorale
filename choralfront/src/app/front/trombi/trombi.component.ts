@@ -1,7 +1,8 @@
-import {Component, OnInit, HostBinding} from '@angular/core';
+import {Component, OnInit, HostBinding, AfterViewInit} from '@angular/core';
 import {Feed} from "../../services/feeds/feed";
 import {Router, ActivatedRoute} from "@angular/router";
 import {FeedsService} from "../../services/feeds/feeds.service";
+import {UtilService} from "../../services/utils/util.service";
 // import {slideInDownAnimation} from "../../animations";
 
 
@@ -12,7 +13,7 @@ import {FeedsService} from "../../services/feeds/feeds.service";
   styleUrls: ['./trombi.component.less'],
   // animations: [ slideInDownAnimation ]
 })
-export class TrombiComponent implements OnInit {
+export class TrombiComponent implements OnInit,AfterViewInit {
 
 
   @HostBinding('style.display')   display = 'block';
@@ -22,10 +23,14 @@ export class TrombiComponent implements OnInit {
   feeds: Feed[];
   images: any[];
 
-  constructor(private router: Router,private route:ActivatedRoute, private feedService: FeedsService) {
+
+  constructor(private router: Router,private route:ActivatedRoute, private feedService: FeedsService,public utils:UtilService) {
   }
 
   ngOnInit() {
+
+
+
     this.feedService.getFeedsByType('trombi').subscribe(feeds => {
       this.feeds = feeds
       this.images = [];
@@ -41,6 +46,12 @@ export class TrombiComponent implements OnInit {
       this.routeData = data;
       this.title = this.routeData.title;
     });
+  }
+
+  ngAfterViewInit(): void {
+
+    this.utils.activeRouteUrl=this.router.url;
+
   }
 
 

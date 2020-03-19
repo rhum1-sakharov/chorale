@@ -4,61 +4,66 @@
 
 </p-blockUI>
 
+<div class="fixed">
 <div class="d-flex justify-content-center align-items-center" style="background-color: black;color:white">
 <div class="p-2">
-<img src="../assets/images/logo.png">
+<img class=" animated wobble" src="../assets/images/logo.png">
 </div>
-<div class="p-2" style="font-size: 30px;">LA CHORALE GOURMANDE</div>
+<div class="p-2  animated fadeInDown delay-1s" style="font-size: 30px;">LA CHORALE GOURMANDE</div>
 </div>
 
 
 <ng-container *ngIf="windowWidth>540">
   <div class="d-flex justify-content-center align-items-center " style="background-color: white;color:black;cursor:pointer;min-width: 100px;">
-    <div class="item-menu"  routerLink="/news" (click)="activeMenu='news'" [class.active-menu]="activeMenu==='news'">
+    <div class=" item-menu"  routerLink="/news" (click)="utils.activeRouteUrl='/news'" [class.active-menu]="utils.activeRouteUrl==='/news'">
       ACTUALITES
     </div>
-    <div class="item-menu"  routerLink="/songs"  (click)="activeMenu='songs'" [class.active-menu]="activeMenu==='songs'">
+    <div class=" item-menu"  routerLink="/songs" (click)="utils.activeRouteUrl='/songs'" [class.active-menu]="utils.activeRouteUrl==='/songs'">
       CHANSONS
     </div>
-    <div class="item-menu"  routerLink="/trombi" (click)="activeMenu='trombi'" [class.active-menu]="activeMenu==='trombi'">
+    <div class=" item-menu"  routerLink="/trombi" (click)="utils.activeRouteUrl='/trombi'" [class.active-menu]="utils.activeRouteUrl==='/trombi'">
       TROMBI
     </div>
 
-    <div class="item-menu" routerLink="/history" (click)="activeMenu='history'" [class.active-menu]="activeMenu==='history'">
+    <div class=" item-menu" routerLink="/history" (click)="utils.activeRouteUrl='/history'" [class.active-menu]="utils.activeRouteUrl==='/history'">
       HISTORIQUE
     </div>
-    <div class="item-menu" routerLink="/events" (click)="activeMenu='events'" [class.active-menu]="activeMenu==='events'">
+    <div class=" item-menu" routerLink="/events" (click)="utils.activeRouteUrl='/events'" [class.active-menu]="utils.activeRouteUrl==='/events'">
       REGLEMENT
     </div>
   </div>
 </ng-container>
 <ng-container *ngIf="windowWidth<=540">
-    <div class=" item-menu"  routerLink="/news" (click)="activeMenu='news'" [class.active-menu]="activeMenu==='news'">
+    <div class=" item-menu"  routerLink="/news" (click)="utils.activeRouteUrl='/news'" [class.active-menu]="utils.activeRouteUrl==='/news'">
       ACTUALITES
     </div>
-    <div class=" item-menu"  routerLink="/songs" (click)="activeMenu='songs'" [class.active-menu]="activeMenu==='songs'">
+    <div class=" item-menu"  routerLink="/songs" (click)="utils.activeRouteUrl='/songs'" [class.active-menu]="utils.activeRouteUrl==='/songs'">
       CHANSONS
     </div>
-    <div class=" item-menu"  routerLink="/trombi" (click)="activeMenu='trombi'" [class.active-menu]="activeMenu==='trombi'">
+    <div class=" item-menu"  routerLink="/trombi" (click)="utils.activeRouteUrl='/trombi'" [class.active-menu]="utils.activeRouteUrl==='/trombi'">
       TROMBI
     </div>
 
-    <div class=" item-menu" routerLink="/history" (click)="activeMenu='history'" [class.active-menu]="activeMenu==='history'">
+    <div class=" item-menu" routerLink="/history" (click)="utils.activeRouteUrl='/history'" [class.active-menu]="utils.activeRouteUrl==='/history'">
       HISTORIQUE
     </div>
-    <div class=" item-menu" routerLink="/events" (click)="activeMenu='events'" [class.active-menu]="activeMenu==='events'">
+    <div class=" item-menu" routerLink="/events" (click)="utils.activeRouteUrl='/events'" [class.active-menu]="utils.activeRouteUrl==='/events'">
       REGLEMENT
     </div>
 </ng-container>
-
+</div>
 
 <audio *ngIf="audioEnabled" controls autoplay hidden>
   <source src="api/css/audio" type="audio/mpeg">
 </audio>
 
-<div class="d-flex justify-content-center">
 
-  <div class="p-2">
+<div class="d-flex justify-content-center main" [style.margin-top.px]="getMarginTop()">
+
+  <div class="p-2" [style.width.px]="utils.getPortWidth()">
+
+
+
     <router-outlet></router-outlet>
   </div>
 

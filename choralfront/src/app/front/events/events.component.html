@@ -1,6 +1,3 @@
-
-
-
 <div *ngFor="let feed of feeds">
 
   <div class="row featurette bgwhite cg-featurette">
@@ -11,12 +8,16 @@
       <tr>
         <td><img *ngIf="feed.photoEnabled"
                  src="api/files/get/feeds/jpg/{{feed.id}}"
-                 class="{{feed.imagePosition}} width-{{feed.imageWidth}} img-thumbnail"
+                 class="{{feed.imagePosition}}  img-thumbnail"
                  title="{{feed.imageTitle}}">
           <p [innerHTML]="feed.content | sanitizeHTML" class="lead"></p></td>
       </tr>
       <tr>
-        <td><p class="cg-footer-right">{{feed.author === ''? '' : feed.author+', '}} le {{feed.creationDate | date: 'EEEE dd MMMM yyyy'}}</p></td>
+        <td>
+          <div class="d-flex justify-content-end">
+            {{feed.author === ''? '' : feed.author+', '}} le {{feed.creationDate | date: 'EEEE dd MMMM yyyy'}}
+          </div>
+        </td>
       </tr>
     </table>
   </div>

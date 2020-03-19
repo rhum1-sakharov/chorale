@@ -7,6 +7,7 @@ import {MessageService} from "primeng";
 export class UtilService {
 
   loading=false;
+  activeRouteUrl='';
 
   constructor(private msgSvc:MessageService) { }
 
@@ -15,4 +16,14 @@ export class UtilService {
     this.msgSvc.add({key,severity, summary, detail,sticky});
   }
 
+
+  getPortWidth(){
+
+    let portWidth=1050;
+    if(window.innerWidth<1200){
+      portWidth = window.innerWidth-25;
+    }
+
+    return portWidth;
+  }
 }

@@ -1,8 +1,10 @@
+
 <p-table [value]="songs"
          [columns]="cols"
          selectionMode="single"
          [(selection)]="selectedSong"
          (onRowSelect)="getSong($event)"
+         [responsive]="true"
          dataKey="id"
          #dt
 >

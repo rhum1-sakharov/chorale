@@ -26,6 +26,7 @@
     "@auth0/angular-jwt": "^4.0.0",
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@fullcalendar/core": "^4.4.0",
+    "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
     "core-js": "^2.4.1",
