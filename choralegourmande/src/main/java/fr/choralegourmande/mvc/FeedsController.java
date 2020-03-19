@@ -54,7 +54,7 @@ public class FeedsController {
         feed.setCreationDate(new Date(Long.valueOf(parameters.get("creationDate").get(0))));
         feed.setAuthor(Application.getValueParameters(parameters, "author"));
         feed.setType(Application.getValueParameters(parameters, "type"));
-        boolean top = parameters.get("top").get(0).equals("1");
+        boolean top = parameters.get("top").get(0).equals("true");
         feed.setTop(top);
         feed.setImagePosition(Application.getValueParameters(parameters, "imagePosition"));
         feed.setImageWidth(Application.getValueParameters(parameters, "imageWidth"));

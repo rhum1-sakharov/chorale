@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Objects;
 
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
@@ -33,8 +34,10 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
         String authToken = request.getHeader(this.tokenHeader);
-        // authToken.startsWith("Bearer ")
-        // String authToken = header.substring(7);
+        if(Objects.nonNull(authToken) && authToken.startsWith("Bearer")){
+            authToken = authToken.replace("Bearer","").trim();
+        }
+
         String username = jwtTokenUtil.getUsernameFromToken(authToken);
 
         logger.debug("checking authentication für user " + username);

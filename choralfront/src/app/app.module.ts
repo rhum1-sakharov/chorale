@@ -18,12 +18,13 @@ import {
   InputTextModule,
   LightboxModule,
   ListboxModule,
+  ToastModule,
   PanelModule,
   RadioButtonModule,
   SelectButtonModule,
   SharedModule,
   TableModule,
-  TabViewModule
+  TabViewModule, MessageService
 } from 'primeng';
 /**
  * Custom components
@@ -110,6 +111,7 @@ export function tokenGetter() {
     ListboxModule,
     InputSwitchModule,
     DataViewModule,
+    ToastModule,
 
     JwtModule.forRoot({
       config: {
@@ -121,7 +123,7 @@ export function tokenGetter() {
   exports:[
 
   ],
-  providers: [DiversService,VisitorsService, FeedsService, SongsService, AuthGuardService,AuthService,JwtHelperService, {provide: LOCALE_ID, useValue: "fr-FR"}],
+  providers: [DiversService,VisitorsService, FeedsService, SongsService, AuthGuardService,AuthService,JwtHelperService, {provide: LOCALE_ID, useValue: "fr-FR"}, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -27,15 +27,15 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/nova-light/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
-
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.less"
             ],
             "scripts": [
               "node_modules/quill/dist/quill.js",
               "node_modules/jquery/dist/jquery.js",
               "node_modules/bootstrap/dist/js/bootstrap.js"
+
             ]
           },
           "configurations": {
@@ -97,7 +97,6 @@
               "node_modules/quill/dist/quill.snow.css",
               "node_modules/primeng/resources/themes/delta/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/bootstrap/dist/css/bootstrap-grid.css",
               "node_modules/bootstrap/dist/css/bootstrap-reboot.css",

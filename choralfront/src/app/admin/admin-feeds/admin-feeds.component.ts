@@ -28,6 +28,32 @@ export class AdminFeedsComponent implements OnInit {
   types: SelectItem[];
   photoWidths: SelectItem[] = [];
 
+
+// <p-column field="type" header="Type" [sortable]="true"></p-column>
+//     <p-column field="title" header="Titre" [sortable]="true"></p-column>
+//     <p-column field="author" header="Auteur" [sortable]="true" [filter]="true" filterMatchMode="contains"></p-column>
+//     <p-column field="creationDate" header="Date de création" [sortable]="true"></p-column>
+//     <p-column field="top" header="Top" [sortable]="true"></p-column>
+//     <p-column field="id" header="Id" [sortable]="true"></p-column>
+
+
+  cols:any[]=[
+    {field:'id',header:'Id'},
+    {field:'title',header:'Titre'},
+    {field:'author',header:'Auteur'},
+    {field:'creationDate',header:'Date de création'},
+    {field:'top',header:'Top'},
+
+  ];
+
+  getTypeLabel(value:string){
+    for (const type of this.types) {
+      if(type.value === value){
+        return type.label;
+      }
+    }
+  }
+
   constructor(private router: Router, private builder: FormBuilder, private feedsService: FeedsService) {
 
     this.types = [];
@@ -151,3 +177,4 @@ export class AdminFeedsComponent implements OnInit {
   }
 
 }
+

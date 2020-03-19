@@ -50,6 +50,15 @@ export const PHOTO_WIDTHS = [
   {label: "2048px", value: 2048}
 ];
 
+export const MSG_KEY={
+  ROOT:'root'
+};
+
+export const MSG_SEVERITY={
+  ERROR:'error',
+  WARN:'warn',
+  SUCCESS:'success'
+}
 
 
 

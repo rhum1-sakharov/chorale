@@ -2,13 +2,15 @@ import {throwError as observableThrowError} from 'rxjs';
 
 import {catchError} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
-import {AUTH} from "../../constants";
+import {AUTH, MSG_KEY, MSG_SEVERITY} from "../../constants";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {UtilService} from "../utils/util.service";
+import {of} from "rxjs/internal/observable/of";
 
 @Injectable()
 export class DiversService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private utils: UtilService) {
   }
 
   isAudioEnabled() {
@@ -50,14 +52,15 @@ export class DiversService {
     }
 
     formData.append('theme', theme);
-    formData.append('audioEnabled', audioEnabled?'true':'false');
+    formData.append('audioEnabled', audioEnabled ? 'true' : 'false');
 
     let url = 'api/css/save';
 
-    return this.http.post(url, formData, {
-      headers: new HttpHeaders().set('Authorization', localStorage.getItem(AUTH.token))
-    }).pipe(
-      catchError(error => observableThrowError(error)));
+    return this.http.post(url, formData, ).pipe(
+      catchError(error => {
+        this.utils.showMsg(MSG_KEY.ROOT, MSG_SEVERITY.ERROR, JSON.stringify(error), '', true);
+        return error;
+      }));
   }
 
 }

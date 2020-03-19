@@ -16,11 +16,9 @@ export class FeedsService {
   }
 
   getFeeds() {
-    let url = 'api/feeds?sort=top,desc&size=9999';
+    let url = 'api/feeds?sort=top,desc&sort=creationDate,desc&size=9999';
 
-    return this.http.get(url, {
-      headers: new HttpHeaders().set('Authorization', localStorage.getItem(AUTH.token))
-    }).pipe(
+    return this.http.get(url).pipe(
       map((response: any) => response._embedded.feeds),
       catchError(error => this.handleError(error))
     )
@@ -64,9 +62,7 @@ export class FeedsService {
     let url = 'api/feeds/add';
 
 
-    return this.http.post(url, formData,{
-      headers: new HttpHeaders().set('Authorization', localStorage.getItem(AUTH.token))
-    } ).pipe(
+    return this.http.post(url, formData ).pipe(
       catchError(error => this.handleError(error))
     );
   }
@@ -74,9 +70,7 @@ export class FeedsService {
   deleteFeed(id: number) {
     let idLet = id;
 
-    return this.http.delete('api/feeds/delete/' + id, {
-      headers: new HttpHeaders().set('Authorization', localStorage.getItem(AUTH.token))
-    }).pipe(
+    return this.http.delete('api/feeds/delete/' + id).pipe(
       catchError(error => observableThrowError(error)))
       .subscribe(
         data => console.log(data),

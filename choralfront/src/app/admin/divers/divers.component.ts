@@ -47,7 +47,7 @@ export class DiversComponent implements OnInit {
     if (this.cssForm.valid) {
       this.diversService.savePreferences(this.bgFile,this.audioFile, this.cssForm.value.themes, this.cssForm.value.audioEnabled)
         .subscribe(res => {
-          console.log('saved css');
+          // console.log('saved css');
           window.location.reload();
         });
     }
