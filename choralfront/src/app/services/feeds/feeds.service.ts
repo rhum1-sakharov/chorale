@@ -39,7 +39,6 @@ export class FeedsService {
 
     let formData: FormData = new FormData();
 
-
     if (!feedFile) {
       formData.append('myFile', new File([""], ""));
     } else {
@@ -58,7 +57,6 @@ export class FeedsService {
     formData.append('imageWidth', feed.imageWidth);
     formData.append('id', feed.id+'');
 
-
     let url = 'api/feeds/add';
 
 
@@ -71,11 +69,8 @@ export class FeedsService {
     let idLet = id;
 
     return this.http.delete('api/feeds/delete/' + id).pipe(
-      catchError(error => observableThrowError(error)))
-      .subscribe(
-        data => console.log(data),
-        error => console.log(error)
-      )
+      catchError(error => observableThrowError(error)));
+
   }
 
   private handleError(error: any): Promise<any> {

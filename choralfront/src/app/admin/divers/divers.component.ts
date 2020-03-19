@@ -5,6 +5,8 @@ import {DiversService} from "../../services/divers/divers.service";
 
 import {NG_THEMES} from "../../constants";
 import {SelectItem} from "primeng";
+import {finalize} from "rxjs/operators";
+import {UtilService} from "../../services/utils/util.service";
 
 @Component({
   selector: 'app-divers',
@@ -21,7 +23,7 @@ export class DiversComponent implements OnInit {
 
   themes: SelectItem[] = [];
 
-  constructor(private router: Router, private builder: FormBuilder, private diversService: DiversService) {
+  constructor(private router: Router,public utils:UtilService, private builder: FormBuilder, private diversService: DiversService) {
     NG_THEMES.map(v => {
       this.themes.push(v);
     });
@@ -45,7 +47,13 @@ export class DiversComponent implements OnInit {
   onSubmit() {
 
     if (this.cssForm.valid) {
+
+      this.utils.loading=true;
+
       this.diversService.savePreferences(this.bgFile,this.audioFile, this.cssForm.value.themes, this.cssForm.value.audioEnabled)
+        .pipe(
+          finalize(()=>this.utils.loading=false)
+        )
         .subscribe(res => {
           // console.log('saved css');
           window.location.reload();

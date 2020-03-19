@@ -1,4 +1,4 @@
-import {Component, OnInit, HostBinding} from '@angular/core';
+import {Component, OnInit, HostBinding, HostListener} from '@angular/core';
 import {Feed} from "../../services/feeds/feed";
 import {Router, ActivatedRoute} from "@angular/router";
 import {FeedsService} from "../../services/feeds/feeds.service";
@@ -25,11 +25,30 @@ export class NewsComponent implements OnInit {
 
   feeds: Feed[];
 
+  photoWidth='200px';
+
 
   constructor(private router: Router, private route: ActivatedRoute, private feedService: FeedsService) {
   }
 
+  getPhotoWidth(){
+    let photoWidth='1050px';
+    if(window.innerWidth<1200){
+      photoWidth=(window.innerWidth-100)+'px';
+    }
+    return photoWidth;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.photoWidth=this.getPhotoWidth();
+  }
+
+
   ngOnInit() {
+
+    this.photoWidth=this.getPhotoWidth();
+
     this.feedService.getFeedsByType('actus').subscribe(feeds => {
       this.feeds = feeds;
       this.images = [];

@@ -3,6 +3,7 @@
          selectionMode="single" [(selection)]="selectedFeed"
          (onRowSelect)="onRowSelect($event)"
          [responsive]="true"
+         [loading]="utils.loading"
          #dt>
 
   <ng-template pTemplate="caption">
@@ -142,7 +143,11 @@
           [maximizable]="true"
           showEffect="fade"
           [modal]="true" [style]="{'width':'800px'}">
+
+
+
   <form [formGroup]="feedForm" (ngSubmit)="onSubmit()">
+
     <div class="ui-grid ui-grid-responsive ui-fluid">
 
       <div class="ui-grid-row">
@@ -160,10 +165,9 @@
         </div>
       </div>
       <div class="ui-grid-row">
-        <div class="ui-grid-col-2"><label for="top">Top*</label></div>
+        <div class="ui-grid-col-2"><label for="top">Top position*</label></div>
         <div class="ui-grid-col-6" id="top">
-          <p-radioButton name="grouptop" value="1" label="oui" formControlName="top"></p-radioButton>
-          <p-radioButton name="grouptop" value="0" label="non" formControlName="top"></p-radioButton>
+          <p-inputSwitch formControlName="top"></p-inputSwitch>
         </div>
       </div>
 
@@ -258,4 +262,5 @@
       </div>
     </footer>
   </form>
+
 </p-dialog>

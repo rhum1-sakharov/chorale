@@ -6,6 +6,8 @@ import {MessageService} from "primeng";
 })
 export class UtilService {
 
+  loading=false;
+
   constructor(private msgSvc:MessageService) { }
 
   showMsg(key:string,severity:string,summary:string,detail?:string,sticky?:boolean){

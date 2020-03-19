@@ -3,9 +3,10 @@ import {Feed} from "../../services/feeds/feed";
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, FormControl, Validators} from "@angular/forms";
 import {FeedsService} from "../../services/feeds/feeds.service";
-import { PHOTO_WIDTHS, FRENCH_CALENDAR} from "../../constants";
+import {PHOTO_WIDTHS, FRENCH_CALENDAR, MSG_KEY, MSG_SEVERITY} from "../../constants";
 import {SelectItem} from "primeng";
-
+import {UtilService} from "../../services/utils/util.service";
+import {finalize} from "rxjs/operators";
 
 
 @Component({
@@ -37,24 +38,24 @@ export class AdminFeedsComponent implements OnInit {
 //     <p-column field="id" header="Id" [sortable]="true"></p-column>
 
 
-  cols:any[]=[
-    {field:'id',header:'Id'},
-    {field:'title',header:'Titre'},
-    {field:'author',header:'Auteur'},
-    {field:'creationDate',header:'Date de création'},
-    {field:'top',header:'Top'},
+  cols: any[] = [
+    {field: 'id', header: 'Id'},
+    {field: 'title', header: 'Titre'},
+    {field: 'author', header: 'Auteur'},
+    {field: 'creationDate', header: 'Date de création'},
+    {field: 'top', header: 'Top'},
 
   ];
 
-  getTypeLabel(value:string){
+  getTypeLabel(value: string) {
     for (const type of this.types) {
-      if(type.value === value){
+      if (type.value === value) {
         return type.label;
       }
     }
   }
 
-  constructor(private router: Router, private builder: FormBuilder, private feedsService: FeedsService) {
+  constructor(private router: Router, public utils: UtilService, private builder: FormBuilder, private feedsService: FeedsService) {
 
     this.types = [];
     this.types.push({label: "Actualité", value: 'actus'});
@@ -62,7 +63,7 @@ export class AdminFeedsComponent implements OnInit {
     this.types.push({label: "Evénement", value: 'events'});
     this.types.push({label: "Trombi", value: 'trombi'});
 
-    PHOTO_WIDTHS.map(v=>{
+    PHOTO_WIDTHS.map(v => {
       this.photoWidths.push(v);
     });
 
@@ -72,14 +73,14 @@ export class AdminFeedsComponent implements OnInit {
       content: new FormControl('', []),
       creationDate: new FormControl('', [Validators.required]),
       title: new FormControl('', [Validators.required]),
-      top: new FormControl('', [Validators.required]),
+      top: new FormControl(false, [Validators.required]),
       photo: new FormControl('', []),
       imageWidth: new FormControl('', []),
       imagePosition: new FormControl('', []),
       type: new FormControl('', [Validators.required]),
       feedFile: new FormControl('', []),
       id: new FormControl('', []),
-      photoEnabled:new FormControl('',[]),
+      photoEnabled: new FormControl(false, []),
     });
   }
 
@@ -96,7 +97,7 @@ export class AdminFeedsComponent implements OnInit {
     this.feedForm.reset();
 
     this.feedForm.controls['type'].setValue('actus');
-    this.feedForm.controls['top'].setValue('0');
+    this.feedForm.controls['top'].setValue(0);
     this.feedForm.controls['imagePosition'].setValue('left');
     this.feedForm.controls['imageWidth'].setValue('128');
     this.feedForm.controls['photoEnabled'].setValue(false);
@@ -106,14 +107,20 @@ export class AdminFeedsComponent implements OnInit {
   delete() {
 
     this.feeds.splice(this.findSelectedFeedIndex(), 1);
-    this.feedsService.deleteFeed(this.selectedFeed.id);
+    this.feedsService.deleteFeed(this.selectedFeed.id).pipe(
+      finalize(()=>this.utils.loading=false)
+    ).subscribe();
     this.feed = null;
     this.displayDialog = false;
   }
 
   onSubmit() {
 
+
+
     if (this.feedForm.valid) {
+
+      this.utils.loading=true;
 
       if (this.feedForm.value.id) {
 
@@ -122,7 +129,10 @@ export class AdminFeedsComponent implements OnInit {
         this.newFeed = true;
       }
 
-      this.feedsService.createFeed(this.feedForm.value, this.feedFile)
+
+      this.feedsService.createFeed(this.feedForm.value, this.feedFile).pipe(
+        finalize(()=>this.utils.loading=false)
+      )
         .subscribe(feed => {
           this.feed = feed;
           if (this.newFeed === true) {
@@ -131,9 +141,13 @@ export class AdminFeedsComponent implements OnInit {
           else {
             this.feeds[this.findSelectedFeedIndex()] = this.feed;
           }
-          this.feed = null;
           this.displayDialog = false;
+          this.utils.showMsg(MSG_KEY.ROOT, MSG_SEVERITY.SUCCESS, `${this.getTypeLabel(this.feed.type)} ${this.feed.title} enregistré(e)`);
+
         });
+
+
+
     }
   }
 
@@ -141,7 +155,7 @@ export class AdminFeedsComponent implements OnInit {
 
     this.newFeed = false;
     this.feedFile = new File([""], "");
-    this.feed = this.cloneFeed(event.data);
+    this.feed = this.cloneFeed(this.selectedFeed);
     this.displayDialog = true;
 
     this.feedForm.controls['title'].setValue(this.feed.title);
@@ -154,6 +168,7 @@ export class AdminFeedsComponent implements OnInit {
     this.feedForm.controls['imageWidth'].setValue(this.feed.imageWidth);
     this.feedForm.controls['id'].setValue(this.feed.id);
     this.feedForm.controls['photoEnabled'].setValue(this.feed.photoEnabled);
+
 
   }
 
@@ -172,8 +187,8 @@ export class AdminFeedsComponent implements OnInit {
   fileChange(event) {
     let fileList: FileList = event.target.files;
     this.feedFile = fileList[0];
-    // TODO
-    // this.feedForm.controls['photo'].updateValueAndValidity(this.feedFile);
+
+    this.feedForm.controls['photo'].setValue(this.feedFile);
   }
 
 }

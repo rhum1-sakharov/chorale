@@ -1,15 +1,27 @@
+<!--<p-galleria [images]="images" [panelWidth]="getGalleriaWidth()"-->
+<!--[frameWidth]="200"-->
+<!--[frameHeight]="130"-->
+<!--transitionInterval="10000"-->
+<!--[panelHeight]="getGalleriaHeight()" [showCaption]="false"></p-galleria>-->
 
-<p-galleria [images]="images" [panelWidth]="getGalleriaWidth()"
-            [frameWidth]="200"
-            [frameHeight]="130"
-            transitionInterval="10000"
-            [panelHeight]="getGalleriaHeight()" [showCaption]="false"></p-galleria>
+<div class="d-flex flex-column" *ngFor="let feed of feeds">
+  <div class="p-2">
+    <p-card>
+      <p-header>
+        <h3 class="p-2">{{feed.title}}</h3>
+        <p [innerHTML]="feed.content | sanitizeHTML"></p>
+      </p-header>
+      <img src="api/files/get/feeds/jpg/{{feed.id}}" [attr.width]="photoWidth">
+    </p-card>
+  </div>
+
+</div>
 
 <!--<div id="carousel-generic" class="carousel slide" data-ride="carousel">-->
 
   <!--<div class="carousel-inner" role="listbox">-->
     <!--<div *ngFor="let feed of feeds" class="item" [ngClass]="{active: isActive(feed)}">-->
-      <!--<img src="api/files/get/feeds/jpg/{{feed.id}}"  >-->
+      <!--<img src="api/files/get/feeds/jpg/{{feed.id}}" width="200px">-->
       <!--<div class="carousel-caption">-->
         <!--<h3>{{feed.title}}</h3>-->
         <!--<p [innerHTML]="feed.content | sanitizeHTML"></p>-->

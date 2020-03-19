@@ -1,52 +1,117 @@
 <p-toast key="root" position="bottom-right"></p-toast>
 
-<div class="cg-container">
-  <div class="cg-main">
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                  aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="../assets/images/logo.png"></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li [routerLinkActive]="['active']"><a href="#">LA CHORALE GOURMANDE</a></li>
-            <li [routerLinkActive]="['active']"><a routerLink="/news">Actualités</a></li>
-            <li [routerLinkActive]="['active']"><a routerLink="/history">Historique</a></li>
-            <li [routerLinkActive]="['active']"><a routerLink="/events">Réglement</a></li>
-            <li [routerLinkActive]="['active']"><a routerLink="/songs">Chansons</a></li>
-            <li [routerLinkActive]="['active']"><a routerLink="/trombi">Trombinoscope</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+<p-blockUI [blocked]="utils.loading">
 
-    <audio *ngIf="audioEnabled" controls  autoplay hidden>
-      <source src="api/css/audio" type="audio/mpeg">
-    </audio>
-    <div class="container">
-      <div class="row">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-  </div>
-  <div class="cg-footer">
-    <div class="row">
-      <footer>
-        <div class="col-md-2">
-          <a href="#" class="creator" md-button>Rhum1©2017</a>
-        </div>
-        <div class="col-md-2 nbvisitors">
-          <p>Nombre de visiteurs : {{nbVisitors}}</p>
-        </div>
-      </footer>
-    </div>
-  </div>
+</p-blockUI>
+
+<div class="d-flex justify-content-center align-items-center" style="background-color: black;color:white">
+<div class="p-2">
+<img src="../assets/images/logo.png">
 </div>
+<div class="p-2" style="font-size: 30px;">LA CHORALE GOURMANDE</div>
+</div>
+
+
+<ng-container *ngIf="windowWidth>540">
+  <div class="d-flex justify-content-center align-items-center " style="background-color: white;color:black;cursor:pointer;min-width: 100px;">
+    <div class="item-menu"  routerLink="/news" (click)="activeMenu='news'" [class.active-menu]="activeMenu==='news'">
+      ACTUALITES
+    </div>
+    <div class="item-menu"  routerLink="/songs"  (click)="activeMenu='songs'" [class.active-menu]="activeMenu==='songs'">
+      CHANSONS
+    </div>
+    <div class="item-menu"  routerLink="/trombi" (click)="activeMenu='trombi'" [class.active-menu]="activeMenu==='trombi'">
+      TROMBI
+    </div>
+
+    <div class="item-menu" routerLink="/history" (click)="activeMenu='history'" [class.active-menu]="activeMenu==='history'">
+      HISTORIQUE
+    </div>
+    <div class="item-menu" routerLink="/events" (click)="activeMenu='events'" [class.active-menu]="activeMenu==='events'">
+      REGLEMENT
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="windowWidth<=540">
+    <div class=" item-menu"  routerLink="/news" (click)="activeMenu='news'" [class.active-menu]="activeMenu==='news'">
+      ACTUALITES
+    </div>
+    <div class=" item-menu"  routerLink="/songs" (click)="activeMenu='songs'" [class.active-menu]="activeMenu==='songs'">
+      CHANSONS
+    </div>
+    <div class=" item-menu"  routerLink="/trombi" (click)="activeMenu='trombi'" [class.active-menu]="activeMenu==='trombi'">
+      TROMBI
+    </div>
+
+    <div class=" item-menu" routerLink="/history" (click)="activeMenu='history'" [class.active-menu]="activeMenu==='history'">
+      HISTORIQUE
+    </div>
+    <div class=" item-menu" routerLink="/events" (click)="activeMenu='events'" [class.active-menu]="activeMenu==='events'">
+      REGLEMENT
+    </div>
+</ng-container>
+
+
+<audio *ngIf="audioEnabled" controls autoplay hidden>
+  <source src="api/css/audio" type="audio/mpeg">
+</audio>
+
+<div class="d-flex justify-content-center">
+
+  <div class="p-2">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+
+
+<!--<div class="cg-container">-->
+<!--<div class="cg-main">-->
+<!--&lt;!&ndash; Fixed navbar &ndash;&gt;-->
+<!--<nav class="navbar navbar-inverse navbar-fixed-top">-->
+<!--<div class="container">-->
+<!--<div class="navbar-header">-->
+<!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"-->
+<!--aria-expanded="false" aria-controls="navbar">-->
+<!--<span class="sr-only">Toggle navigation</span>-->
+<!--<span class="icon-bar"></span>-->
+<!--<span class="icon-bar"></span>-->
+<!--<span class="icon-bar"></span>-->
+<!--</button>-->
+<!--<a class="navbar-brand" href="#"><img src="../assets/images/logo.png"></a>-->
+<!--</div>-->
+<!--<div id="navbar" class="navbar-collapse collapse">-->
+<!--<ul class="nav navbar-nav">-->
+<!--<li [routerLinkActive]="['active']"><a href="/news">LA CHORALE GOURMANDE</a></li>-->
+<!--<li [routerLinkActive]="['active']"><a routerLink="/news">Actualités</a></li>-->
+<!--<li [routerLinkActive]="['active']"><a routerLink="/history">Historique</a></li>-->
+<!--<li [routerLinkActive]="['active']"><a routerLink="/events">Réglement</a></li>-->
+<!--<li [routerLinkActive]="['active']"><a routerLink="/songs">Chansons</a></li>-->
+<!--<li [routerLinkActive]="['active']"><a routerLink="/trombi">Trombinoscope</a></li>-->
+<!--</ul>-->
+<!--</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->
+<!--</div>-->
+<!--</nav>-->
+
+<!--<audio *ngIf="audioEnabled" controls  autoplay hidden>-->
+<!--<source src="api/css/audio" type="audio/mpeg">-->
+<!--</audio>-->
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<router-outlet></router-outlet>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="cg-footer">-->
+<!--<div class="row">-->
+<!--<footer>-->
+<!--<div class="col-md-2">-->
+<!--<a href="#" class="creator" md-button>Rhum1©2017</a>-->
+<!--</div>-->
+<!--<div class="col-md-2 nbvisitors">-->
+<!--<p>Nombre de visiteurs : {{nbVisitors}}</p>-->
+<!--</div>-->
+<!--</footer>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->

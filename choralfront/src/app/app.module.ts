@@ -24,7 +24,7 @@ import {
   SelectButtonModule,
   SharedModule,
   TableModule,
-  TabViewModule, MessageService
+  TabViewModule, MessageService, BlockUIModule, CardModule
 } from 'primeng';
 /**
  * Custom components
@@ -112,6 +112,8 @@ export function tokenGetter() {
     InputSwitchModule,
     DataViewModule,
     ToastModule,
+    BlockUIModule,
+    CardModule,
 
     JwtModule.forRoot({
       config: {
