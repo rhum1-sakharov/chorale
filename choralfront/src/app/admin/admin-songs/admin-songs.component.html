@@ -1,7 +1,3 @@
-<script src="admin.songs.component.ts"></script>
-
-<p-table></p-table>
-
 <!--<p-dataTable [value]="songs" selectionMode="single" [(selection)]="selectedSong"-->
              <!--(onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">-->
   <!--<header>Gestion des Chansons</header>-->
@@ -24,6 +20,91 @@
     <!--</div>-->
   <!--</footer>-->
 <!--</p-dataTable>-->
+
+<p-table [value]="songs"
+         [columns]="cols"
+         selectionMode="single" [(selection)]="selectedSong"
+         (onRowSelect)="onRowSelect($event)"
+         [responsive]="true"
+         [loading]="utils.loading"
+         #dt>
+
+  <ng-template pTemplate="caption">
+    <div class="text-left">
+
+      <span class="margin-right-5">
+        <button type="button" pButton icon="fas fa-plus"
+                pTooltip="Ajouter une chanson"
+                showDelay="500"
+                (click)="showDialogToAdd()"
+        ></button>
+        </span>
+      GESTION DES CHANSONS
+    </div>
+
+
+  </ng-template>
+
+  <ng-template pTemplate="colgroup">
+    <colgroup style="width:45%;"></colgroup>
+    <colgroup style="width:30%;"></colgroup>
+    <colgroup style="width:15%;"></colgroup>
+    <colgroup style="width:10%;"></colgroup>
+  </ng-template>
+
+  <ng-template pTemplate="header">
+    <tr>
+
+      <th [pSortableColumn]="'title'">Titre
+        <p-sortIcon [field]="'title'"></p-sortIcon>
+      </th>
+      <th [pSortableColumn]="'compositor'">Compositeur
+        <p-sortIcon [field]="'compositor'"></p-sortIcon>
+      </th>
+      <th [pSortableColumn]="'releaseDate'">Date
+        <p-sortIcon [field]="'releaseDate'"></p-sortIcon>
+      </th>
+      <th [pSortableColumn]="'id'">Id
+        <p-sortIcon [field]="'id'"></p-sortIcon>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <input style="width:90%;" placeholder="rechercher un titre..." pInputText type="text"
+               (input)="dt.filter($event.target.value, 'title', 'contains')">
+
+      </th>
+      <th>
+        <input style="width:90%;" placeholder="rechercher un auteur..." pInputText type="text"
+               (input)="dt.filter($event.target.value, 'compositor', 'contains')">
+      </th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  </ng-template>
+
+  <ng-template pTemplate="body" let-rowData>
+    <tr  [pSelectableRow]="rowData" >
+      <td>
+        {{rowData.title}}
+      </td>
+      <td>
+        {{rowData.compositor}}
+      </td>
+      <td>
+        {{rowData.releaseDate | date:'dd/MM/yy' }}
+      </td>
+      <td>
+        {{rowData.id }}
+      </td>
+    </tr>
+  </ng-template>
+
+</p-table>
+
+
+
 
 <p-dialog header="Propriétés de la Chanson" [responsive]="false" [(visible)]="displayDialog" showEffect="fade"
           [modal]="true" [style]="{'width':'600px'}">
@@ -78,9 +159,13 @@
     </div>
     <footer>
       <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-        <button type="submit" [disabled]="!songForm.valid" pButton icon="fa-check" label="Enregistrer"></button>
-        <button type="button" [disabled]="newSong" pButton icon="fa-close" (click)="delete()"
+        <span class="margin-right-5">
+        <button type="submit" [disabled]="!songForm.valid" pButton icon="fas fa-check" label="Enregistrer"></button>
+          </span>
+        <span class="margin-right-5">
+        <button type="button" [disabled]="newSong" pButton icon="fas fa-times" (click)="delete()"
                 label="Supprimer"></button>
+        </span>
       </div>
     </footer>
   </form>

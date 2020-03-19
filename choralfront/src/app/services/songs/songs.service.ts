@@ -38,11 +38,8 @@ export class SongsService {
     let idLet = id;
 
     return this.http.delete('api/songs/delete/' + id).pipe(
-      catchError(error => observableThrowError(error)))
-      .subscribe(
-        data => console.log(data),
-        error => console.log(error)
-      )
+      catchError(error => observableThrowError(error)));
+
   }
 
   createSong(song: Song, songFile: File) {

@@ -3,7 +3,9 @@ import {SongsService} from "../../services/songs/songs.service";
 import {Song} from "../../services/songs/song";
 import {FormControl, FormBuilder, Validators, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
-import { FRENCH_CALENDAR} from "../../constants";
+import {FRENCH_CALENDAR, MSG_KEY, MSG_SEVERITY} from "../../constants";
+import {finalize} from "rxjs/operators";
+import {UtilService} from "../../services/utils/util.service";
 
 @Component({
 
@@ -32,7 +34,14 @@ export class AdminSongsComponent implements OnInit {
   nwcFile: FormControl;
   releaseDate: FormControl;
 
-  constructor(private router: Router, private builder: FormBuilder, private songsService: SongsService) {
+  cols: any[] = [
+    {header: 'title', field: 'Titre'},
+    {header: 'compositor', field: 'Compositeur'},
+    {header: 'releaseDate', field: 'Date'},
+    {header: 'id', field: '%Id'},
+  ];
+
+  constructor(private router: Router, public utils: UtilService, private builder: FormBuilder, private songsService: SongsService) {
 
     this.title = new FormControl('', [Validators.required]);
     this.band = new FormControl('', []);
@@ -60,13 +69,17 @@ export class AdminSongsComponent implements OnInit {
 
     if (this.songForm.valid) {
 
+      this.utils.loading = true;
+
       if (this.songForm.value.id) {
         this.newSong = false;
       } else {
         this.newSong = true;
       }
 
-      this.songsService.createSong(this.songForm.value, this.songFile)
+      this.songsService.createSong(this.songForm.value, this.songFile).pipe(
+        finalize(() => this.utils.loading = false)
+      )
         .subscribe(song => {
           this.song = song;
           if (this.newSong === true) {
@@ -77,15 +90,22 @@ export class AdminSongsComponent implements OnInit {
           }
 
           this.displayDialog = false;
+          this.utils.showMsg(MSG_KEY.ROOT, MSG_SEVERITY.SUCCESS, `Chanson '${this.song.title}' enregistrée`);
         });
     }
   }
 
   delete() {
     this.songs.splice(this.findSelectedSongIndex(), 1);
-    this.songsService.deleteSong(this.selectedSong.id);
-    this.song = null;
-    this.displayDialog = false;
+    this.songsService.deleteSong(this.selectedSong.id).pipe(
+      finalize(() => this.utils.loading = false)
+    ).subscribe(response=>{
+
+      this.utils.showMsg(MSG_KEY.ROOT, MSG_SEVERITY.SUCCESS, `Chanson '${this.song.title}' supprimée`);
+      this.song = null;
+      this.displayDialog = false;
+    });
+
   }
 
   showDialogToAdd() {
@@ -100,7 +120,7 @@ export class AdminSongsComponent implements OnInit {
     this.newSong = false;
     this.songFile = new File([""], "");
 
-    this.song = this.cloneSong(event.data);
+    this.song = this.cloneSong(this.selectedSong);
 
 
     this.displayDialog = true;
@@ -128,8 +148,8 @@ export class AdminSongsComponent implements OnInit {
     let fileList: FileList = event.target.files;
     this.songFile = fileList[0];
 
-    //TODO
-    // this.nwcFile.updateValueAndValidity(this.songFile);
+
+    this.songForm.controls['nwcFile'].setValue(this.songFile);
   }
 
 

@@ -109,9 +109,12 @@ export class AdminFeedsComponent implements OnInit {
     this.feeds.splice(this.findSelectedFeedIndex(), 1);
     this.feedsService.deleteFeed(this.selectedFeed.id).pipe(
       finalize(()=>this.utils.loading=false)
-    ).subscribe();
-    this.feed = null;
-    this.displayDialog = false;
+    ).subscribe(response=>{
+      this.utils.showMsg(MSG_KEY.ROOT, MSG_SEVERITY.SUCCESS, `Article '${this.feed.title}' supprimé`);
+      this.feed = null;
+      this.displayDialog = false;
+    });
+
   }
 
   onSubmit() {
