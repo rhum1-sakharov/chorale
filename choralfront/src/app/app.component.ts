@@ -47,11 +47,11 @@ export class AppComponent implements OnInit,AfterViewInit {
 
   getMarginTop() {
 
-    if(this.windowWidth>540){
+    if(this.windowWidth>670){
       return 125;
     }
 
-    return 300;
+    return 80;
   }
 
   ngAfterViewInit(): void {
