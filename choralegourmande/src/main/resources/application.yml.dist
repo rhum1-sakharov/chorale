@@ -31,3 +31,6 @@ jwt:
     authentication:
       path: auth
       refresh: refresh
+
+management:
+  add-application-context-header: false
