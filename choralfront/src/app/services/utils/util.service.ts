@@ -20,7 +20,10 @@ export class UtilService {
   getPortWidth(){
 
     let portWidth=1050;
-    if(window.innerWidth<1200){
+
+    if(window.innerWidth<670){
+      portWidth = window.innerWidth-15;
+    }else if(window.innerWidth<1200){
       portWidth = window.innerWidth-25;
     }
 

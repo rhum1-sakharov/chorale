@@ -34,7 +34,7 @@
     "fontawesome": "^5.6.3",
     "jquery": "^3.1.1",
     "primeicons": "^2.0.0",
-    "primeng": "^9.0.0",
+    "primeng": "^9.0.2",
     "quill": "^1.1.8",
     "rxjs": "^6.5.4",
     "rxjs-compat": "^6.0.0-rc.0",

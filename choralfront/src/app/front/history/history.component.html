@@ -1,24 +1,31 @@
-<div *ngFor="let feed of feeds">
+<div class="p-2" *ngFor="let feed of feeds">
 
-  <div class="row featurette bgwhite cg-featurette">
-    <table>
-      <thead>
-      <th><h2 class="featurette-heading">{{feed.title}}</h2></th>
-      </thead>
-      <tr>
-        <td><img *ngIf="feed.photoEnabled"
-                 src="api/files/get/feeds/jpg/{{feed.id}}"
-                 class="{{feed.imagePosition}} img-thumbnail"
-                 title="{{feed.imageTitle}}">
-          <p [innerHTML]="feed.content | sanitizeHTML" class="lead"></p></td>
-      </tr>
-      <tr>
-        <td>
-          <div class="d-flex justify-content-end" >
-            {{feed.author === ''? '' : feed.author+', '}} le {{feed.creationDate | date: 'EEEE dd MMMM yyyy'}}
-          </div>
-        </td>
-      </tr>
-    </table>
-  </div>
+  <p-card>
+    <p-header>
+      <div class="d-flex ">
+        <div class="p-2">
+          <h2>{{feed.title}}</h2>
+        </div>
+
+      </div>
+    </p-header>
+
+    <div class="d-flex flex-column">
+      <div class="p-2" >
+        <img *ngIf="feed.photoEnabled"
+             src="api/files/get/feeds/jpg/{{feed.id}}"
+             class="img-thumbnail"
+             title="{{feed.imageTitle}}">
+        <p [innerHTML]="feed.content | sanitizeHTML"></p>
+      </div>
+    </div>
+
+    <p-footer>
+      <div class="d-flex justify-content-end">
+        {{feed.author === ''? '' : feed.author+', '}} le {{feed.creationDate | date: 'EEEE dd MMMM yyyy'}}
+      </div>
+    </p-footer>
+  </p-card>
+
+
 </div>
