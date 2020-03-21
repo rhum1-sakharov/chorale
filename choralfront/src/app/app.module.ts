@@ -56,6 +56,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {registerLocaleData} from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import {AUTH} from "./constants";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -119,7 +121,9 @@ export function tokenGetter() {
       config: {
         tokenGetter: tokenGetter
       }
-    })
+    }),
+
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
 
   ],
   exports:[
