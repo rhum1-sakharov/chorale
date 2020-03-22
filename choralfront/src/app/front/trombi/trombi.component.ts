@@ -3,6 +3,7 @@ import {Feed} from "../../services/feeds/feed";
 import {Router, ActivatedRoute} from "@angular/router";
 import {FeedsService} from "../../services/feeds/feeds.service";
 import {UtilService} from "../../services/utils/util.service";
+import {Title} from "@angular/platform-browser";
 // import {slideInDownAnimation} from "../../animations";
 
 
@@ -24,7 +25,7 @@ export class TrombiComponent implements OnInit,AfterViewInit {
   images: any[];
 
 
-  constructor(private router: Router,private route:ActivatedRoute, private feedService: FeedsService,public utils:UtilService) {
+  constructor(private router: Router,private route:ActivatedRoute, private feedService: FeedsService,public utils:UtilService,private titleSvc:Title) {
   }
 
   ngOnInit() {
@@ -45,6 +46,7 @@ export class TrombiComponent implements OnInit,AfterViewInit {
     this.route.data.subscribe(data => {
       this.routeData = data;
       this.title = this.routeData.title;
+      this.titleSvc.setTitle('La chorale gourmande - trombi');
     });
   }
 

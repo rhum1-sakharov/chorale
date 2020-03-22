@@ -3,6 +3,7 @@ import {Feed} from "../../services/feeds/feed";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FeedsService} from "../../services/feeds/feeds.service";
 import {UtilService} from "../../services/utils/util.service";
+import {Title} from "@angular/platform-browser";
 // import {slideInDownAnimation} from "../../animations";
 
 @Component({
@@ -21,7 +22,7 @@ export class HistoryComponent implements OnInit,AfterViewInit {
   routeData: any;
   feeds: Feed[];
 
-  constructor(private router: Router,private route:ActivatedRoute, private feedService: FeedsService,public utils:UtilService) {
+  constructor(private router: Router,private route:ActivatedRoute, private feedService: FeedsService,public utils:UtilService,private titleSvc:Title) {
 
   }
 
@@ -30,6 +31,9 @@ export class HistoryComponent implements OnInit,AfterViewInit {
     this.route.data.subscribe(data => {
       this.routeData = data;
       this.title = this.routeData.title;
+
+      this.titleSvc.setTitle('La chorale gourmande - historique');
+
     });
   }
 

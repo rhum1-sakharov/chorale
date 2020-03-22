@@ -6,6 +6,7 @@ import { saveAs } from 'file-saver';
 // import {slideInDownAnimation} from "../../animations";
 import any = jasmine.any;
 import {UtilService} from "../../services/utils/util.service";
+import {Title} from "@angular/platform-browser";
 
 @Component({
 
@@ -32,7 +33,7 @@ export class SongsComponent implements OnInit,AfterViewInit {
     {field:'extension',header:'Extensions'}
     ];
 
-  constructor(private router: Router,public utils:UtilService, private route: ActivatedRoute, private songsService: SongsService) {
+  constructor(private router: Router,public utils:UtilService, private route: ActivatedRoute, private songsService: SongsService, private titleSvc:Title) {
   }
 
   ngOnInit() {
@@ -40,6 +41,7 @@ export class SongsComponent implements OnInit,AfterViewInit {
     this.route.data.subscribe(data => {
       this.routeData = data;
       this.title = this.routeData.title;
+      this.titleSvc.setTitle('La chorale gourmande - chansons');
     });
   }
 
