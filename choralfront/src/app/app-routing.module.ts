@@ -13,22 +13,22 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 const appRoutes: Routes = [
   {
-    path: 'news',
+    path: 'actualites',
     component: NewsComponent,
     data: {title: "Actualités"}
   },
   {
-    path: 'history',
+    path: 'historique',
     component: HistoryComponent,
     data: {title: "Historique"}
   },
   {
-    path: 'events',
+    path: 'reglement',
     component: EventsComponent,
     data: {title: "Evénements"}
   },
   {
-    path: 'songs',
+    path: 'chansons',
     component: SongsComponent,
     data: {title: "Chansons"}
   },
@@ -45,7 +45,7 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/news',
+    redirectTo: '/actualites',
     pathMatch: 'full'
   },
   { path: 'login', component: LoginComponent },

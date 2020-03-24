@@ -1,12 +1,17 @@
 spring:
+  servlet:
+    multipart:
+      max-file-size: 12800KB
+      max-request-size: 12800KB
+
   jpa:
-    show-sql: true
+    show-sql: false
     hibernate.ddl-auto: update
     database-platform: org.hibernate.dialect.MySQL5Dialect
   datasource:
-    url: jdbc:mysql://mysql:{port}/{database}
-    username:
-    password:
+    url: jdbc:mysql://localhost:3306/db_name
+    username: mysql
+    password: XXXX
     driverClassName: com.mysql.jdbc.Driver
     tomcat:
       # Number of ms to wait before throwing an exception if no connection is available.
@@ -16,16 +21,15 @@ spring:
       # Validate the connection before borrowing it from the pool.
       test-on-borrow: true
 
-  http:
-    multipart.max-file-size: 12800KB
-    multipart.max-request-size: 12800KB
-
 server:
-  context-path: /api
+  servlet:
+     context-path: /api
+  port: 80
+  http2.enable : true
 
 jwt:
   header: Authorization
-  secret: secret
+  secret: secretpassword
   expiration: 604800
   route:
     authentication:
@@ -33,4 +37,5 @@ jwt:
       refresh: refresh
 
 management:
-  add-application-context-header: false
+  server:
+      add-application-context-header: false

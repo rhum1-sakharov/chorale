@@ -89,7 +89,7 @@ public class FeedsController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Message> deleteFeed(@PathVariable String id) {
         try {
-            feedRepo.delete(Long.valueOf(id));
+            feedRepo.deleteById(Long.valueOf(id));
             datastore.deleteContent(id, "jpg", "feeds");
         } catch (IOException e) {
             LOG.error(e.getMessage(), e);

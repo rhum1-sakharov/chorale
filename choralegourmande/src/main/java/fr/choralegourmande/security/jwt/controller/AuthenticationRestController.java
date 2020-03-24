@@ -1,8 +1,10 @@
 package fr.choralegourmande.security.jwt.controller;
 
+import fr.choralegourmande.security.jwt.JwtAuthenticationRequest;
 import fr.choralegourmande.security.jwt.JwtTokenUtil;
 import fr.choralegourmande.security.jwt.JwtUser;
 import fr.choralegourmande.security.jwt.service.JwtAuthenticationResponse;
+import fr.choralegourmande.security.jwt.service.JwtUserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import fr.choralegourmande.security.jwt.JwtAuthenticationRequest;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -35,7 +36,7 @@ public class AuthenticationRestController {
     private JwtTokenUtil jwtTokenUtil;
 
     @Autowired
-    private UserDetailsService userDetailsService;
+    private JwtUserDetailsServiceImpl userDetailsService;
 
     @RequestMapping(value = "${jwt.route.authentication.path}", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest, Device device) throws AuthenticationException {

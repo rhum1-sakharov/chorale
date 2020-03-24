@@ -1,6 +1,5 @@
 package fr.choralegourmande;
 
-import fr.choralegourmande.config.DbTraceRepository;
 import fr.choralegourmande.entities.Message;
 import fr.choralegourmande.filters.CountVisitorsFilter;
 import fr.choralegourmande.misc.images.IImageEnhancement;
@@ -10,7 +9,6 @@ import fr.choralegourmande.repositories.MessageRepository;
 import fr.choralegourmande.repositories.VisitorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.actuate.trace.TraceRepository;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -45,10 +43,6 @@ public class Application {
     @Autowired
     VisitorRepository visitorRepo;
 
-//    @Bean
-//    public TraceRepository traceRequests(){
-//        return new DbTraceRepository();
-//    }
 
 
     @Bean

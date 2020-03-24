@@ -88,7 +88,7 @@ public class SongsController {
             }
         }
 
-        songRepo.delete(Long.valueOf(id));
+        songRepo.deleteById(Long.valueOf(id));
 
         return new ResponseEntity<Message>(mapMessages.get("song.deleted"), null, HttpStatus.OK);
     }
@@ -100,7 +100,7 @@ public class SongsController {
         HttpHeaders headers = new HttpHeaders();
         try {
 
-            Song song = songRepo.findOne(Long.valueOf(id));
+            Song song = songRepo.findByInstanceId(Long.valueOf(id));
             bytes = datastore.getContent(id, extension, "songs");
             headers.set("Content-Length", String.valueOf(bytes.length));
 
