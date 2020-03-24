@@ -1,6 +1,6 @@
-package fr.choralegourmande.security.jwt.repository;
+package fr.choralegourmande.repositories;
 
-import fr.choralegourmande.security.jwt.model.User;
+import fr.choralegourmande.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

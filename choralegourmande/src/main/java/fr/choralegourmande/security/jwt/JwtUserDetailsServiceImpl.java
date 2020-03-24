@@ -1,13 +1,13 @@
-package fr.choralegourmande.security.jwt.service;
+package fr.choralegourmande.security.jwt;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import fr.choralegourmande.security.jwt.model.User;
+import fr.choralegourmande.entities.User;
 import fr.choralegourmande.security.jwt.JwtUserFactory;
-import fr.choralegourmande.security.jwt.repository.UserRepository;
+import fr.choralegourmande.repositories.UserRepository;
 
 /**
  * Created by stephan on 20.03.16.

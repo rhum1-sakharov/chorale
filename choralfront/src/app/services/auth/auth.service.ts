@@ -26,10 +26,23 @@ export class AuthService implements OnInit {
 
   login(credentials: Credentials): Observable<boolean> {
 
-    return this.http.post('api/auth', credentials).pipe(
+    let body = new FormData();
+    body.set('grant_type', 'password');
+    body.set('username', credentials.username);
+    body.set('password', credentials.password);
+    body.set('client_id', 'chorale');
+    body.set('client_secret', 'mySecret');
+
+
+    // let headers = new HttpHeaders({'Authorization': 'Basic ' + btoa("dolapp:fdlebtrvl")});
+
+    // const error = {status:500,statusText:'erreur non comprise'};
+    // this.utils.handleError(error,true);
+
+    return this.http.post('api/oauth/token', body).pipe(
       catchError(error => observableThrowError(error)),
       map((data:any) => {
-          localStorage.setItem(AUTH.token, data.token);
+          localStorage.setItem(AUTH.token, data.access_token);
           return data.token;
         }
       ),);
@@ -49,10 +62,11 @@ export class AuthService implements OnInit {
     if (!this.jwtService.isTokenExpired(token)) {
       let tokenStr: any = this.jwtService.decodeToken(token);
 
+
       if(tokenStr){
         //iterate over roles of user
-        tokenStr.sub.authorities.map(res => {
-          if (res.authority.substring(5) == role) {
+        tokenStr.authorities.map(res => {
+          if (res.substring(5) === role) {
             userHasAccess = true;
           }
         });

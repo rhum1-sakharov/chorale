@@ -43,6 +43,8 @@ export class LoginComponent implements OnInit {
         let redirect = localStorage.getItem(AUTH.redirectUrl);
         let role = localStorage.getItem(AUTH.redirectRole);
 
+
+
         if (role && redirect) {
           if (this.auth.checkUserAccess(role)) {
             this.router.navigate([redirect]);
@@ -57,7 +59,7 @@ export class LoginComponent implements OnInit {
           let token : any = localStorage.getItem(AUTH.token);
           token = this.jwtHelper.decodeToken(token);
           let roles : string = '';
-          console.log(token.sub);
+
           for (var i=0;i<token.sub.authorities.length;i++){
             roles += token.sub.authorities[i].authority+ ', ';
           }

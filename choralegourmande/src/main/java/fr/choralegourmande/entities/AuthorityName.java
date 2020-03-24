@@ -1,4 +1,4 @@
-package fr.choralegourmande.security.jwt.model;
+package fr.choralegourmande.entities;
 
 public enum AuthorityName {
     ROLE_USER, ROLE_ADMIN

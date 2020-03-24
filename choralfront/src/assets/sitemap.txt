@@ -1,6 +1,6 @@
-https://chorale-gourmande.fr/news
-https://chorale-gourmande.fr/songs
-https://chorale-gourmande.fr/events
-https://chorale-gourmande.fr/history
+https://chorale-gourmande.fr/actualites
+https://chorale-gourmande.fr/chansons
+https://chorale-gourmande.fr/reglement
+https://chorale-gourmande.fr/historique
 https://chorale-gourmande.fr/trombi
 https://chorale-gourmande.fr

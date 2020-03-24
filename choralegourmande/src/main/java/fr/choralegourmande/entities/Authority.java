@@ -1,4 +1,4 @@
-package fr.choralegourmande.security.jwt.model;
+package fr.choralegourmande.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

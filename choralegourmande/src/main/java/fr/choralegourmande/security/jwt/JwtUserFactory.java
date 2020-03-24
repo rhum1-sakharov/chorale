@@ -1,7 +1,7 @@
 package fr.choralegourmande.security.jwt;
 
-import fr.choralegourmande.security.jwt.model.Authority;
-import fr.choralegourmande.security.jwt.model.User;
+import fr.choralegourmande.entities.Authority;
+import fr.choralegourmande.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 

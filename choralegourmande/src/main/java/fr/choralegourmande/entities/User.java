@@ -1,4 +1,6 @@
-package fr.choralegourmande.security.jwt.model;
+package fr.choralegourmande.entities;
+
+import fr.choralegourmande.entities.Authority;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
