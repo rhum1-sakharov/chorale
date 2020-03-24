@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da514925-ad96-4f71-8786-b307f6ceb8ac" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/CustomTokenEnhancer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/OAuth2AuthorizationServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/OAuth2ResourceServerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/chorale-gourmande.iml" beforeDir="false" afterPath="$PROJECT_DIR$/choralegourmande/chorale-gourmande.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/choralegourmande/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/JwtAuthenticationEntryPoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/JwtAuthenticationRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/JwtAuthenticationTokenFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/JwtTokenUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/JwtUserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/JwtUserFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/controller/AuthenticationRestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/controller/MethodProtectedRestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/controller/UserRestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/model/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/entities/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/model/AuthorityName.java" beforeDir="false" afterPath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/entities/AuthorityName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/service/JwtAuthenticationResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/service/JwtUserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/JwtUserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralfront/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/choralfront/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralfront/src/app/services/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/choralfront/src/app/services/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choralfront/src/assets/sitemap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/choralfront/src/assets/sitemap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml.dist" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/choralegourmande/target/" />
     <ignored path="choralegourmande/src/main/resources/application.yml" />
@@ -37,13 +15,32 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="374">
+                    <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="OAuth2ResourceServerConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/OAuth2ResourceServerConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+            <state relative-caret-position="71">
+              <caret line="35" column="77" selection-start-line="35" selection-start-column="77" selection-end-line="35" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,65 +57,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JwtUserFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/JwtUserFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JwtUser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JwtUser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/JwtUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="340">
+              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/repositories/UserRepository.java">
+      <file leaf-file-name="songs.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/songs/songs.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state relative-caret-position="502">
+              <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/entities/User.java">
+      <file leaf-file-name="admin-songs.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choralfront/src/app/admin/admin-songs/admin-songs.component.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="admin-songs.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choralfront/src/app/admin/admin-songs/admin-songs.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="189">
+              <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Authority.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/entities/Authority.java">
+      <file leaf-file-name="songs.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choralfront/src/app/services/songs/songs.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthorityName.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/entities/AuthorityName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CssController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/mvc/CssController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1306">
-              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+            <state relative-caret-position="363">
+              <caret line="58" column="38" lean-forward="true" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -126,8 +104,26 @@
       <file leaf-file-name="WebSecurityConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/WebSecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="204">
+              <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml.dist" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml.dist">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -173,7 +169,6 @@
         <option value="$PROJECT_DIR$/choralfront/src/app/front/trombi/trombi.component.html" />
         <option value="$PROJECT_DIR$/choralfront/src/app/front/songs/songs.component.html" />
         <option value="$PROJECT_DIR$/choralfront/src/app/admin/admin-feeds/admin-feeds.component.html" />
-        <option value="$PROJECT_DIR$/choralfront/src/app/services/songs/songs.service.ts" />
         <option value="$PROJECT_DIR$/choralfront/src/app/admin/admin-songs/admin-songs.component.ts" />
         <option value="$PROJECT_DIR$/choralfront/src/app/admin/admin-feeds/admin-feeds.component.ts" />
         <option value="$PROJECT_DIR$/choralfront/src/app/admin/admin-songs/admin-songs.component.html" />
@@ -197,22 +192,23 @@
         <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/repositories/SongRepository.java" />
         <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/mvc/SongsController.java" />
         <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/JwtTokenUtil.java" />
-        <option value="$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml.dist" />
         <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/controller/AuthenticationRestController.java" />
         <option value="$PROJECT_DIR$/choralegourmande/pom.xml" />
         <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/CustomTokenEnhancer.java" />
         <option value="$PROJECT_DIR$/choralfront/src/assets/sitemap.txt" />
         <option value="$PROJECT_DIR$/choralfront/src/app/login/login.component.ts" />
         <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/MethodSecurityConfig.java" />
-        <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/OAuth2AuthorizationServerConfig.java" />
         <option value="$PROJECT_DIR$/choralfront/src/app/services/auth/auth.service.ts" />
-        <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/OAuth2ResourceServerConfig.java" />
         <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/repositories/UserRepository.java" />
         <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/entities/Authority.java" />
         <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/entities/User.java" />
         <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/JwtUserDetailsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/WebSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/OAuth2ResourceServerConfig.java" />
+        <option value="$PROJECT_DIR$/choralfront/src/app/services/songs/songs.service.ts" />
+        <option value="$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml.dist" />
+        <option value="$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml" />
       </list>
     </option>
   </component>
@@ -366,6 +362,40 @@
               <item name="choralfront" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-songs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="songs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -384,6 +414,25 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
               <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="songs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chorale" type="462c0819:PsiDirectoryNode" />
+              <item name="choralfront" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="songs" type="462c0819:PsiDirectoryNode" />
+              <item name="songs.service.ts" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="chorale" type="b2602c69:ProjectViewProjectNode" />
@@ -500,7 +549,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="login&#9;null&#9;null&#10;sitem&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/src/assets/sitemap.txt&#10;WebS&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralegourmande/src/main/java/fr/choralegourmande/config/WebSecurityConfig.java&#10;angu&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/angular.json&#10;angular.&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/angular.json&#10;angula&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/angular.json&#10;package.js&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/package.json&#10;theme.css&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/node_modules/primeng/resources/themes/rhea/theme.css" />
+    <property name="SearchEverywhereHistoryKey" value="applic&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralegourmande/src/main/resources/application.yml.dist&#10;songs.c&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/src/app/front/songs/songs.component.ts&#10;login&#9;null&#9;null&#10;sitem&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/src/assets/sitemap.txt&#10;WebS&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralegourmande/src/main/java/fr/choralegourmande/config/WebSecurityConfig.java&#10;angu&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/angular.json&#10;angular.&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/angular.json&#10;angula&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/angular.json&#10;package.js&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/package.json&#10;theme.css&#9;FILE&#9;file://D:/WORKSHARE/dev/chorale/choralfront/node_modules/primeng/resources/themes/rhea/theme.css" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -597,7 +646,7 @@
       <workItem from="1584711278548" duration="2458000" />
       <workItem from="1584820266305" duration="766000" />
       <workItem from="1584899312841" duration="2500000" />
-      <workItem from="1585035220452" duration="9071000" />
+      <workItem from="1585035220452" duration="11082000" />
     </task>
     <task id="LOCAL-00001" summary="initial import">
       <created>1584456775795</created>
@@ -725,11 +774,25 @@
       <option name="project" value="LOCAL" />
       <updated>1585037674256</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="update jwt">
+      <created>1585054530165</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1585054530165</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix ajout chanson">
+      <created>1585055289290</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1585055289290</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59340000" />
+    <option name="totallyTimeSpent" value="61351000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -755,7 +818,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.38961038" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.38961038" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.33766234" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32900432" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -765,7 +828,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3284055" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32900432" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3181818" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3181818" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23507462" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
@@ -843,7 +906,9 @@
     <MESSAGE value="add icons for progesseive web app" />
     <MESSAGE value="google ranking" />
     <MESSAGE value="upgrade to springboot 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="upgrade to springboot 2" />
+    <MESSAGE value="update jwt" />
+    <MESSAGE value="fix ajout chanson" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix ajout chanson" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -860,34 +925,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/events/events.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="38" column="65" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/history/history.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="144" selection-start-line="24" selection-start-column="144" selection-end-line="24" selection-end-column="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/news/news.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="32" column="154" selection-start-line="32" selection-start-column="154" selection-end-line="32" selection-end-column="154" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/songs/songs.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/trombi/trombi.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -964,13 +1001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml.dist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.2.4.RELEASE/spring-web-5.2.4.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -1027,13 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="12" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1126,27 +1149,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/mvc/CssController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1306">
           <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/OAuth2ResourceServerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1235,8 +1241,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/security/jwt/JwtUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="340">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/java/fr/choralegourmande/config/OAuth2ResourceServerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="35" column="77" selection-start-line="35" selection-start-column="77" selection-end-line="35" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/front/songs/songs.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/admin/admin-songs/admin-songs.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/admin/admin-songs/admin-songs.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralfront/src/app/services/songs/songs.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="58" column="38" lean-forward="true" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choralegourmande/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
         </state>
       </provider>
     </entry>

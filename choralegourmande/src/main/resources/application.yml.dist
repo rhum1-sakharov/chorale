@@ -25,7 +25,8 @@ server:
   servlet:
      context-path: /api
   port: 80
-  http2.enable : true
+  http2:
+     enable : true
 
 jwt:
   header: Authorization
