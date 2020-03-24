@@ -61,7 +61,6 @@ export class SongsService {
 
     let url = 'api/songs/add';
     return this.http.post(url, formData).pipe(
-      map((response:any)=> response._embedded.songs as Song[]),
       catchError(err=>this.handleError(err))
     );
   }
